@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}
+{% endblock %}
+
+{% block body %}
+{% block header %}
+{{parent()}}
+{% endblock %}
+{% block section %}
+    <div class="wrapper">
+            <div class="container">
+
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-primary dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                        <h4 class="page-title">Welcome To Enablis Coworking!</h4>
+                    </div>
+                </div>
+                <div class="row"id="slider-container" class="slider-area">
+                     {% for entity in entities %}
+                    <div class="carousel-item">
+                       
+                        <img src="data:image/png;base64,{{ entity.image }}"style="width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{entity.titre}}</h5>
+                        <p>{{entity.description}}</p>
+                    </div>
+                        
+                    </div>
+                    {% endfor %}
+                    
+
+                   
+                </div> <!-- End row -->
+            </div>
+    </div>            
+ 
+{% endblock %}
+{% block footer %}
+{{parent()}}
+{% endblock %}
+{% endblock %}

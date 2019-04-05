@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.ico')}}" />
+        <title>
+        {% block title %}
+         Enablis
+        {% endblock %}
+        </title>
+        {% block stylesheets %}
+        
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+            <link href="{{ asset('assets/plugins/sweetalert/dist/sweetalert.css')}}" rel="stylesheet" type="text/css">
+
+            <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/core.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/components.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/pages.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/menu.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css">
+
+            <script src="{{ asset('assets/js/modernizr.min.js')}}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% block header %}
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main  navbar m-b-0 b-0">
+                <div class="container">
+
+                    <!-- LOGO -->
+                    <div class="topbar-left">
+                        <a href="{{path('home')}}" class="logo"><i class="md md-terrain"></i> <span>Enablis </span></a>
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+                           
+                            <li class="dropdown user-box">
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile " data-toggle="dropdown" aria-expanded="true">
+                                    <img src="{{ asset('assets/images/users/avatar-1.jpg')}}" alt="{{ app.user}}" class="img-circle user-img">
+                                    <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="navbar-custom">
+                <div class="container">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <li class="active">
+                                <a href="{{path('home')}}"><i class="md md-home"></i> <span> Dashboard </span> </a>
+                            </li>
+
+
+                            <li class="has-submenu">
+                                <a href="/service/list"><i class="md md-palette "></i><span> Services Enablis </span> </a>
+                                <ul class="submenu">
+                                    <li><a href="/service/list">Liste des Services</a></li>
+                                    <li><a href="article-details.html">Demander un Service</a></li>
+                                    <li><a href="gallery.html">Inscription au Programme Enabler</a></li>
+                                    <li><a href="gallery.html">Liste des Coachs</a></li>
+                                    <li><a href="gallery.html">Liste des Enablers</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="md md-invert-colors-on"></i> <span> Mon Accompagnement </span> </a>
+                                <ul class="submenu">
+                                    <li><a href="gallery.html">Rapport du diagnostic</a></li>
+                                    <li><a href="mentor-details.html">Rapport du plan de developpement</a></li>
+                                    <li><a href="gallery.html">Mes Participations</a></li>
+                                    <li><a href="gallery.html">Services Payants</a></li>
+                                    <li><a href="gallery.html">Mes Coachs, mentors, enablers</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="md md-redeem"></i> <span> Forum </span> </a>
+                            </li>
+                            {% if is_granted('ROLE_COACH') %}
+                            <li class="has-submenu">
+                                <a href="#"><i class="md md-pages"></i><span>Espace Coach </span> </a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="profile.html">Mes Membres</a></li>
+                                        </ul>
+                                    </li>
+                               
+                                </ul>
+                            </li>
+                            {% endif %}
+
+                        </ul>
+                        <!-- End navigation menu  -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
+        {% endblock %}
+        {% block section %}
+        {% endblock %}
+        {% block event %}
+        {% endblock %}
+        {% block enabler %}
+        {% endblock %}
+        {% block membre %}
+        {% endblock %}
+        {% block footer %}
+           <!-- Footer -->
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                2019 © {{app.user}}.
+                            </div>
+                            <div class="col-xs-6">
+                                <ul class="pull-right list-inline m-b-0">
+                                    <li>
+                                        <a href="#">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+        {% endblock %}
+        {% endblock %}
+        {% block javascripts %}
+       <!-- jQuery  -->
+        <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{ asset('assets/js/detect.js')}}"></script>
+        <script src="{{ asset('assets/js/fastclick.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.blockUI.js')}}"></script>
+        <script src="{{ asset('assets/js/waves.js')}}"></script>
+        <script src="{{ asset('assets/js/wow.min.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.nicescroll.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.scrollTo.min.js')}}"></script>
+
+        <!-- App js -->
+        <script src="{{ asset('assets/js/jquery.app.js')}}"></script>
+
+        <!-- Examples -->
+	    <script src="{{ asset('assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
+	    <script src="{{ asset('assets/plugins/jquery-datatables-editable/jquery.dataTables.js')}}"></script>
+	    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+	    <script src="{{ asset('assets/pages/datatables.editable.init.js')}}"></script>
+        
+        {% endblock %}
+    </body>
+</html>

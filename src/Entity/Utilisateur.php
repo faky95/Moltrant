@@ -93,6 +93,26 @@ class Utilisateur extends BaseUser
     private $dateFin;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\SecteurActivite", inversedBy="utilisateurs")
+     */
+    private $secteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Etude", inversedBy="utilisateurs")
+     */
+    private $etude;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $anneActivite;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Photo", cascade={"persist", "remove"})
+     */
+    private $photo;
+
+    /**
      * (non-PHPdoc)
      * @see \FOS\UserBundle\Model\User::hasRole()
      */
@@ -300,6 +320,56 @@ class Utilisateur extends BaseUser
 
         return $this;
     }
+
+    public function getSecteur(): ?SecteurActivite
+    {
+        return $this->secteur;
+    }
+
+    public function setSecteur(?SecteurActivite $secteur): self
+    {
+        $this->secteur = $secteur;
+
+        return $this;
+    }
+
+    public function getEtude(): ?Etude
+    {
+        return $this->etude;
+    }
+
+    public function setEtude(?Etude $etude): self
+    {
+        $this->etude = $etude;
+
+        return $this;
+    }
+
+    public function getAnneActivite(): ?string
+    {
+        return $this->anneActivite;
+    }
+
+    public function setAnneActivite(?string $anneActivite): self
+    {
+        $this->anneActivite = $anneActivite;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?Photo
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?Photo $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    
 
 
 

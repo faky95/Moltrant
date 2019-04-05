@@ -10,7 +10,9 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use App\Entity\Utilisateur;
+use App\Entity\Photo;
 
 
 class RegistrationFormType extends BaseType
@@ -39,8 +41,12 @@ class RegistrationFormType extends BaseType
             		'first_options' => array('label' => 'form.password', 'attr' => array('placeholder' => 'Saisir le mot de passe')),
             		'second_options' => array('label' => 'form.password_confirmation', 'attr' => array('placeholder' => 'Confirmation')),
             		'invalid_message' => 'fos_user.password.mismatch',
-                  ))
+				  ))
+			->add('etude',null,array('label'=>'Niveau d\'Etudes :' )) 
+			->add('photo',FileType::class,array('label'=>'Votre Photo :'))     
 			->add('nom_entreprise',TextType::class,array('label'=>'Entreprise :','required' => true )) 
+			->add('secteur', null, array('label' => 'Secteur d\'Activite :'))
+			->add('anneActivite',TextType::class,array('label'=>'Nombre d\'Annees d\'Activite :','required' => true ))      
 			->add('localite',TextType::class,array('label'=>'Localité :','required' => true ))      
             ->add('employes',null,array('label'=>'Nombre d\'Employes :','required' => true ))      
             ->add('chiffre_affaire',TextType::class,array('label'=>'Chiffre d\'Affaire :','required' => true ))      

@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Form\RegistrationFormType;
 use App\Entity\Utilisateur;
 use App\Entity\Image;
+use App\Entity\Photo;
 
 class HomeController extends AbstractController
 {
@@ -50,16 +51,23 @@ class HomeController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         //Build a form
         $user = new Utilisateur();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $photo = new Photo();
+        $user->setPhoto($photo->setAvatar(file_get_contents($photo->getAvatar())));
+        $form = $this->createForm(RegistrationFormType::class, $user);            
         //handle the submit with post
+        
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
             $user->setEnabled(1);
             $em->persist($user);
             $em->flush();
+            
             return $this->redirectToRoute("fos_user_security_login");
         }
+        $userId=$user->getId();
+        $photo->setAvatar(file_get_contents($photo->getAvatar()));
+        $photo->setUtilisateur($userId);
 
         return $this->render('home/register.html.twig', [
             'form' => $form->createView(),

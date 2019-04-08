@@ -48,12 +48,12 @@
                            
                             <li class="dropdown user-box">
                                 <a href="" class="dropdown-toggle waves-effect waves-light profile " data-toggle="dropdown" aria-expanded="true">
-                                    <img src="{{ asset('assets/images/users/avatar-1.jpg')}}" alt="{{ app.user}}" class="img-circle user-img">
+                                    <img src="data:image/png;base64,{{ app.user.photo }}" alt="{{ app.user}}" class="img-circle user-img">
                                     <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                                    <li><a href="{{path('profile')}}"><i class="md md-face-unlock"></i> Profile</a></li>
                                     <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
                                     <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
                                     <li><a href="{{ path('fos_user_security_logout') }}"><i class="md md-settings-power"></i> Logout</a></li>

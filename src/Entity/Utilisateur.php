@@ -371,4 +371,13 @@ class Utilisateur extends BaseUser
         return $this;
     }
 
+        /**
+     * Get nom complet
+     * @return string 
+     */
+    public function getNomComplet()
+    {
+        return strtoupper($this->prenom).' '.strtoupper($this->nom);
+    }
+
 }

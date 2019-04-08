@@ -163,7 +163,10 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 </a>
 
                                 <ul class=\"dropdown-menu\">
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
+                                    <li><a href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
+        echo "\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
                                     <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
                                     <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
                                     <li><a href=\"";
@@ -473,7 +476,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
     public function getDebugInfo()
     {
-        return array (  453 => 193,  444 => 192,  417 => 174,  403 => 173,  395 => 170,  392 => 169,  384 => 166,  381 => 165,  378 => 164,  361 => 163,  355 => 159,  341 => 158,  335 => 156,  329 => 154,  326 => 153,  309 => 152,  303 => 148,  298 => 133,  285 => 122,  283 => 121,  275 => 115,  266 => 114,  248 => 105,  234 => 93,  232 => 92,  200 => 63,  171 => 37,  158 => 29,  144 => 18,  135 => 11,  126 => 10,  116 => 192,  114 => 114,  112 => 10,  103 => 9,  91 => 7,  82 => 6,  70 => 4,  61 => 3,  27 => 1,);
+        return array (  456 => 193,  447 => 192,  420 => 174,  406 => 173,  398 => 170,  395 => 169,  387 => 166,  384 => 165,  381 => 164,  364 => 163,  358 => 159,  344 => 158,  338 => 156,  332 => 154,  329 => 153,  312 => 152,  306 => 148,  301 => 133,  288 => 122,  286 => 121,  278 => 115,  269 => 114,  251 => 105,  237 => 93,  235 => 92,  203 => 63,  174 => 37,  168 => 34,  158 => 29,  144 => 18,  135 => 11,  126 => 10,  116 => 192,  114 => 114,  112 => 10,  103 => 9,  91 => 7,  82 => 6,  70 => 4,  61 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -511,7 +514,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 </a>
 
                                 <ul class=\"dropdown-menu\">
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
+                                    <li><a href=\"{{path('profile')}}\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
                                     <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
                                     <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
                                     <li><a href=\"{{ path('fos_user_security_logout') }}\"><i class=\"md md-settings-power\"></i> Logout</a></li>

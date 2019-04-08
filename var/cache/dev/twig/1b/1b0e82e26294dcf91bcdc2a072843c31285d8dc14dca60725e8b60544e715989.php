@@ -236,9 +236,9 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
                            
                             <li class=\"dropdown user-box\">
                                 <a href=\"\" class=\"dropdown-toggle waves-effect waves-light profile \" data-toggle=\"dropdown\" aria-expanded=\"true\">
-                                    <img src=\"";
+                                    <img src=\"data:image/png;base64,";
         // line 51
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/users/avatar-1.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", []), "photo", []), "html", null, true);
         echo "\" alt=\"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", []), "html", null, true);
         echo "\" class=\"img-circle user-img\">
@@ -610,7 +610,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
                            
                             <li class=\"dropdown user-box\">
                                 <a href=\"\" class=\"dropdown-toggle waves-effect waves-light profile \" data-toggle=\"dropdown\" aria-expanded=\"true\">
-                                    <img src=\"{{ asset('assets/images/users/avatar-1.jpg')}}\" alt=\"{{ app.user}}\" class=\"img-circle user-img\">
+                                    <img src=\"data:image/png;base64,{{ app.user.photo }}\" alt=\"{{ app.user}}\" class=\"img-circle user-img\">
                                     <div class=\"user-status away\"><i class=\"zmdi zmdi-dot-circle\"></i></div>
                                 </a>
 

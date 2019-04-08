@@ -35,6 +35,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'login' => [[], ['_controller' => 'App\\Controller\\HomeController::login'], [], [['text', '/']], [], []],
         'home' => [[], ['_controller' => 'App\\Controller\\HomeController::home'], [], [['text', '/home']], [], []],
         'register' => [[], ['_controller' => 'App\\Controller\\HomeController::register'], [], [['text', '/register']], [], []],
+        'profile' => [[], ['_controller' => 'App\\Controller\\ProfileController::profil'], [], [['text', '/profile']], [], []],
         'list' => [[], ['_controller' => 'App\\Controller\\ServiceController::list'], [], [['text', '/service/list']], [], []],
         'fos_user_security_login' => [[], ['_controller' => 'fos_user.security.controller:loginAction'], [], [['text', '/login']], [], []],
         'fos_user_security_check' => [[], ['_controller' => 'fos_user.security.controller:checkAction'], [], [['text', '/login_check']], [], []],

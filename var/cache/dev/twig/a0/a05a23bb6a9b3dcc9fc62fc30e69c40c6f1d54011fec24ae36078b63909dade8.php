@@ -91,6 +91,6 @@ class __TwigTemplate_7262e111ba575370cdea36710cb18c6ae4dd2ce721bbfa97681589c9958
         <input type=\"submit\" value=\"{{ 'registration.submit'|trans }}\" />
     </div>
 {{ form_end(form) }}
-", "FOSUserBundle:Registration:register_content.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig");
+", "FOSUserBundle:Registration:register_content.html.twig", "/home/faky/Documents/Moltrant/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig");
     }
 }

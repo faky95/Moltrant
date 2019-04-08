@@ -215,128 +215,9 @@ class __TwigTemplate_67186ca72975a990606fcf59e24a9871c32a2982667a3af162d5601cbfa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
         // line 33
-        echo "        <!-- Navigation Bar-->
-        <header id=\"topnav\">
-            <div class=\"topbar-main  navbar m-b-0 b-0\">
-                <div class=\"container\">
-
-                    <!-- LOGO -->
-                    <div class=\"topbar-left\">
-                        <a href=\"";
-        // line 40
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\" class=\"logo\"><i class=\"md md-terrain\"></i> <span>Enablis </span></a>
-                    </div>
-                    <!-- End Logo container-->
-
-
-                    <div class=\"menu-extras\">
-
-                        <ul class=\"nav navbar-nav navbar-right pull-right\">
-                           
-                            <li class=\"dropdown user-box\">
-                                <a href=\"\" class=\"dropdown-toggle waves-effect waves-light profile \" data-toggle=\"dropdown\" aria-expanded=\"true\">
-                                    <img src=\"";
-        // line 51
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/users/avatar-1.jpg"), "html", null, true);
-        echo "\" alt=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", []), "html", null, true);
-        echo "\" class=\"img-circle user-img\">
-                                    <div class=\"user-status away\"><i class=\"zmdi zmdi-dot-circle\"></i></div>
-                                </a>
-
-                                <ul class=\"dropdown-menu\">
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
-                                    <li><a href=\"";
-        // line 59
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
-        echo "\"><i class=\"md md-settings-power\"></i> Logout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class=\"menu-item\">
-                            <!-- Mobile menu toggle-->
-                            <a class=\"navbar-toggle\">
-                                <div class=\"lines\">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </a>
-                            <!-- End mobile menu toggle-->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class=\"navbar-custom\">
-                <div class=\"container\">
-                    <div id=\"navigation\">
-                        <!-- Navigation Menu-->
-                        <ul class=\"navigation-menu\">
-                            <li class=\"active\">
-                                <a href=\"";
-        // line 85
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"><i class=\"md md-home\"></i> <span> Dashboard </span> </a>
-                            </li>
-
-
-                            <li class=\"has-submenu\">
-                                <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
-                                <ul class=\"submenu\">
-                                    <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"article-details.html\">Demander un Service</a></li>
-                                    <li><a href=\"gallery.html\">Inscription au Programme Enabler</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Coachs</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Enablers</a></li>
-                                </ul>
-                            </li>
-
-                            <li class=\"has-submenu\">
-                                <a href=\"#\"><i class=\"md md-invert-colors-on\"></i> <span> Mon Accompagnement </span> </a>
-                                <ul class=\"submenu\">
-                                    <li><a href=\"gallery.html\">Rapport du diagnostic</a></li>
-                                    <li><a href=\"mentor-details.html\">Rapport du plan de developpement</a></li>
-                                    <li><a href=\"gallery.html\">Mes Participations</a></li>
-                                    <li><a href=\"gallery.html\">Services Payants</a></li>
-                                    <li><a href=\"gallery.html\">Mes Coachs, mentors, enablers</a></li>
-                                </ul>
-                            </li>
-
-                            <li class=\"has-submenu\">
-                                <a href=\"#\"><i class=\"md md-redeem\"></i> <span> Forum </span> </a>
-                            </li>
-                            ";
-        // line 114
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_COACH")) {
-            // line 115
-            echo "                            <li class=\"has-submenu\">
-                                <a href=\"#\"><i class=\"md md-pages\"></i><span>Espace Coach </span> </a>
-                                <ul class=\"submenu megamenu\">
-                                    <li>
-                                        <ul>
-                                            <li><a href=\"profile.html\">Mes Membres</a></li>
-                                        </ul>
-                                    </li>
-                               
-                                </ul>
-                            </li>
-                            ";
-        }
-        // line 127
-        echo "
-                        </ul>
-                        <!-- End navigation menu  -->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- End Navigation Bar-->
-        ";
+        echo "        ";
+        // line 135
+        echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -626,7 +507,7 @@ class __TwigTemplate_67186ca72975a990606fcf59e24a9871c32a2982667a3af162d5601cbfa
 
     public function getDebugInfo()
     {
-        return array (  596 => 214,  590 => 211,  584 => 208,  578 => 205,  574 => 204,  570 => 203,  566 => 202,  562 => 201,  558 => 200,  554 => 199,  550 => 198,  543 => 194,  537 => 191,  533 => 190,  527 => 187,  521 => 184,  515 => 181,  511 => 180,  507 => 179,  503 => 178,  499 => 177,  495 => 176,  491 => 175,  487 => 174,  483 => 173,  480 => 172,  471 => 171,  441 => 150,  434 => 145,  425 => 144,  415 => 143,  406 => 142,  396 => 141,  387 => 140,  377 => 139,  368 => 138,  358 => 137,  349 => 136,  331 => 127,  317 => 115,  315 => 114,  283 => 85,  254 => 59,  241 => 51,  227 => 40,  218 => 33,  209 => 32,  199 => 170,  196 => 144,  193 => 142,  190 => 140,  187 => 138,  184 => 136,  181 => 32,  172 => 31,  160 => 27,  155 => 25,  151 => 24,  147 => 23,  143 => 22,  139 => 21,  135 => 20,  131 => 19,  126 => 17,  119 => 12,  110 => 11,  99 => 8,  90 => 7,  78 => 226,  75 => 171,  73 => 31,  69 => 29,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
+        return array (  477 => 214,  471 => 211,  465 => 208,  459 => 205,  455 => 204,  451 => 203,  447 => 202,  443 => 201,  439 => 200,  435 => 199,  431 => 198,  424 => 194,  418 => 191,  414 => 190,  408 => 187,  402 => 184,  396 => 181,  392 => 180,  388 => 179,  384 => 178,  380 => 177,  376 => 176,  372 => 175,  368 => 174,  364 => 173,  361 => 172,  352 => 171,  322 => 150,  315 => 145,  306 => 144,  296 => 143,  287 => 142,  277 => 141,  268 => 140,  258 => 139,  249 => 138,  239 => 137,  230 => 136,  220 => 135,  218 => 33,  209 => 32,  199 => 170,  196 => 144,  193 => 142,  190 => 140,  187 => 138,  184 => 136,  181 => 32,  172 => 31,  160 => 27,  155 => 25,  151 => 24,  147 => 23,  143 => 22,  139 => 21,  135 => 20,  131 => 19,  126 => 17,  119 => 12,  110 => 11,  99 => 8,  90 => 7,  78 => 226,  75 => 171,  73 => 31,  69 => 29,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -663,7 +544,7 @@ class __TwigTemplate_67186ca72975a990606fcf59e24a9871c32a2982667a3af162d5601cbfa
     <body>
         {% block body %}
         {% block header %}
-        <!-- Navigation Bar-->
+        {# <!-- Navigation Bar-->
         <header id=\"topnav\">
             <div class=\"topbar-main  navbar m-b-0 b-0\">
                 <div class=\"container\">
@@ -681,7 +562,7 @@ class __TwigTemplate_67186ca72975a990606fcf59e24a9871c32a2982667a3af162d5601cbfa
                            
                             <li class=\"dropdown user-box\">
                                 <a href=\"\" class=\"dropdown-toggle waves-effect waves-light profile \" data-toggle=\"dropdown\" aria-expanded=\"true\">
-                                    <img src=\"{{ asset('assets/images/users/avatar-1.jpg')}}\" alt=\"{{ app.user}}\" class=\"img-circle user-img\">
+                                    <img src=\"data:image/png;base64,{{ photo.photo }}\" alt=\"{{ app.user}}\" class=\"img-circle user-img\">
                                     <div class=\"user-status away\"><i class=\"zmdi zmdi-dot-circle\"></i></div>
                                 </a>
 
@@ -764,7 +645,7 @@ class __TwigTemplate_67186ca72975a990606fcf59e24a9871c32a2982667a3af162d5601cbfa
                 </div>
             </div>
         </header>
-        <!-- End Navigation Bar-->
+        <!-- End Navigation Bar--> #}
         {% endblock %}
         {% block section %}
         {% endblock %}
@@ -858,6 +739,6 @@ class __TwigTemplate_67186ca72975a990606fcf59e24a9871c32a2982667a3af162d5601cbfa
         {% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/faky/Documents/EnablisMoltran/templates/base.html.twig");
+", "base.html.twig", "/home/faky/Documents/Moltrant/templates/base.html.twig");
     }
 }

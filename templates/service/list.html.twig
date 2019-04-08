@@ -1,6 +1,5 @@
 {% extends 'serviceLayout.html.twig' %}
 
-
 {% block title %}
 {{parent()}}
 {% endblock %}
@@ -28,11 +27,11 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="m-b-30">
-                                    <button id="addToTable" class="btn btn-primary waves-effect waves-light">Add <i class="fa fa-plus"></i></button>
+                                    <button id="addToTable" class="btn btn-primary waves-effect waves-light">Ajouter <i class="fa fa-plus"></i></button>
                                 </div>
                             </div>
                         </div>
-                        <table class="table table-bordered table-striped" id="datatable-editable">
+                        <table class="table table-bordered table-striped" id="datatable-editable" data-leschamps="nomService, description">
                             <thead>
                                 <tr>
                                     <th>Nom Service</th>
@@ -40,23 +39,23 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            {% for service in services %}
                             <tbody>
+                            {% for service in services %}
                                 <tr class="gradeX">
                                     <td>{{service.nomService}}</td>
                                     <td>{{service.description}}</td>
                                     <td class="actions">
                                         <a href="#" class="on-default show-row"><i class="fa fa-eye"></i></a>
                                         {% if is_granted('ROLE_ADMIN') %}
-                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                        <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                            <a href="#" data-id="{{ service.id }}" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                                            <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                                            <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                            <a href="#" data-id="{{ service.id }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                         {% endif %}
                                     </td>
                                 </tr>
-                            </tbody>
                             {% endfor %}
+                            </tbody>
                         </table>
                     </div>
                     <!-- end: page -->
@@ -124,4 +123,9 @@
 {{parent()}}
 {% endblock %}
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/pages/datatables.editable.init.js')}}"></script>
 {% endblock %}

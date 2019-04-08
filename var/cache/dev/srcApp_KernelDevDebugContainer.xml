@@ -480,10 +480,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\PhotoRepository" class="App\Repository\PhotoRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\SecteurActiviteRepository" class="App\Repository\SecteurActiviteRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -3184,7 +3180,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.2Gn9vSn"/>
+      <argument type="service" id=".service_locator.6.SCxqZ"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5273,8 +5269,6 @@
     <service id=".abstract.instanceof.App\Repository\EtudeRepository" class="App\Repository\EtudeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PhotoRepository" class="App\Repository\PhotoRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\PhotoRepository" class="App\Repository\PhotoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SecteurActiviteRepository" class="App\Repository\SecteurActiviteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SecteurActiviteRepository" class="App\Repository\SecteurActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServiceRepository" class="App\Repository\ServiceRepository" autowire="true" abstract="true"/>
@@ -5534,12 +5528,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.2Gn9vSn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6.SCxqZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\EtudeRepository" type="service" id="App\Repository\EtudeRepository"/>
         <argument key="App\Repository\ImageRepository" type="service" id="App\Repository\ImageRepository"/>
-        <argument key="App\Repository\PhotoRepository" type="service" id="App\Repository\PhotoRepository"/>
         <argument key="App\Repository\SecteurActiviteRepository" type="service" id="App\Repository\SecteurActiviteRepository"/>
         <argument key="App\Repository\ServiceRepository" type="service" id="App\Repository\ServiceRepository"/>
       </argument>

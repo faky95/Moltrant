@@ -77,6 +77,6 @@ class __TwigTemplate_287abe6055f69f89e5c109d0c93c513b5ac3b83788b4e338e133899180c
         return new Source("<?xml version=\"1.0\" encoding=\"{{ _charset }}\" ?>
 
 <error code=\"{{ status_code }}\" message=\"{{ status_text }}\" />
-", "TwigBundle:Exception:error.xml.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
+", "TwigBundle:Exception:error.xml.twig", "/home/faky/Documents/Moltrant/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
     }
 }

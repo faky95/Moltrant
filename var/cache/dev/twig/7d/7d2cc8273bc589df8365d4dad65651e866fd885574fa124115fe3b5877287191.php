@@ -93,6 +93,6 @@ class __TwigTemplate_7dad4b0b3b3358c97d44eb2def1d8175e16dea000ff787669dee1cd381c
             </trace>
 {% endfor %}
         </traces>
-", "TwigBundle:Exception:traces.xml.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/twig-bundle/Resources/views/Exception/traces.xml.twig");
+", "TwigBundle:Exception:traces.xml.twig", "/home/faky/Documents/Moltrant/vendor/symfony/twig-bundle/Resources/views/Exception/traces.xml.twig");
     }
 }

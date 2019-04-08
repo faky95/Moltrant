@@ -139,6 +139,6 @@ class __TwigTemplate_d4f7ab69c7357830431780ff2ee3c1c46bf892a22f0089b58dadda89e8f
 {% endautoescape %}
 {% endblock %}
 {% block body_html %}{% endblock %}
-", "FOSUserBundle:Registration:email.txt.twig", "/home/faky/Bureau/IntranetEnablis/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/email.txt.twig");
+", "FOSUserBundle:Registration:email.txt.twig", "/home/faky/Documents/Moltrant/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/email.txt.twig");
     }
 }

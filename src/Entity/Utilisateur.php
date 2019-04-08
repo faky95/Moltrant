@@ -108,9 +108,11 @@ class Utilisateur extends BaseUser
     private $anneActivite;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Photo", cascade={"persist", "remove"})
+     * @ORM\Column(type="blob", nullable=true)
      */
     private $photo;
+
+   
 
     /**
      * (non-PHPdoc)
@@ -357,20 +359,16 @@ class Utilisateur extends BaseUser
         return $this;
     }
 
-    public function getPhoto(): ?Photo
+    public function getPhoto()
     {
         return $this->photo;
     }
 
-    public function setPhoto(?Photo $photo): self
+    public function setPhoto($photo): self
     {
         $this->photo = $photo;
 
         return $this;
     }
-
-    
-
-
 
 }

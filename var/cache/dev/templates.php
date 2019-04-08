@@ -147,6 +147,7 @@
   'FOSUserBundle:Registration:check_email.html.twig' => __DIR__.'/../../../vendor/friendsofsymfony/user-bundle/Resources/views/Registration/check_email.html.twig',
   'FOSUserBundle:Registration:register_content.html.twig' => __DIR__.'/../../../vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig',
   'FOSUserBundle:Registration:email.txt.twig' => __DIR__.'/../../../vendor/friendsofsymfony/user-bundle/Resources/views/Registration/email.txt.twig',
+  'FOSUserBundle::resetLayout.html.twig' => __DIR__.'/../../../vendor/friendsofsymfony/user-bundle/Resources/views/resetLayout.html.twig',
   'FOSUserBundle:ChangePassword:change_password.html.twig' => __DIR__.'/../../../vendor/friendsofsymfony/user-bundle/Resources/views/ChangePassword/change_password.html.twig',
   'FOSUserBundle:ChangePassword:change_password_content.html.twig' => __DIR__.'/../../../vendor/friendsofsymfony/user-bundle/Resources/views/ChangePassword/change_password_content.html.twig',
 );

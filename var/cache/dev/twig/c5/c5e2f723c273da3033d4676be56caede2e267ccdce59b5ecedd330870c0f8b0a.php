@@ -174,6 +174,6 @@ class __TwigTemplate_7621ea31e77a461699d134b13f3371feb6cc3706212ff9d8e2bf8fb5158
         </tr>
     </tbody>
 </table>
-", "TwigBundle:Exception:traces_text.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
+", "TwigBundle:Exception:traces_text.html.twig", "/home/faky/Documents/Moltrant/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
     }
 }

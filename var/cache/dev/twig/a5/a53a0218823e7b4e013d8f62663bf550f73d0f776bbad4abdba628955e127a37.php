@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* @FOSUser/Resetting/request_content.html.twig */
+/* FOSUserBundle:Resetting:request_content.html.twig */
 class __TwigTemplate_df2b71c666cee8832ddbc1a8c9a8274797667fab107fa8643d22b755f3cf5e2b extends \Twig\Template
 {
     private $source;
@@ -24,7 +24,7 @@ class __TwigTemplate_df2b71c666cee8832ddbc1a8c9a8274797667fab107fa8643d22b755f3c
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("@FOSUser/resetLayout.html.twig", "@FOSUser/Resetting/request_content.html.twig", 1);
+        $this->parent = $this->loadTemplate("@FOSUser/resetLayout.html.twig", "FOSUserBundle:Resetting:request_content.html.twig", 1);
         $this->blocks = [
             'fos_user_content' => [$this, 'block_fos_user_content'],
         ];
@@ -38,10 +38,10 @@ class __TwigTemplate_df2b71c666cee8832ddbc1a8c9a8274797667fab107fa8643d22b755f3c
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FOSUser/Resetting/request_content.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FOSUserBundle:Resetting:request_content.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FOSUser/Resetting/request_content.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FOSUserBundle:Resetting:request_content.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -108,7 +108,7 @@ class __TwigTemplate_df2b71c666cee8832ddbc1a8c9a8274797667fab107fa8643d22b755f3c
 
     public function getTemplateName()
     {
-        return "@FOSUser/Resetting/request_content.html.twig";
+        return "FOSUserBundle:Resetting:request_content.html.twig";
     }
 
     public function isTraitable()
@@ -156,6 +156,6 @@ class __TwigTemplate_df2b71c666cee8832ddbc1a8c9a8274797667fab107fa8643d22b755f3c
    
 </form>
 {% endblock fos_user_content %}
-", "@FOSUser/Resetting/request_content.html.twig", "/home/faky/Documents/EnablisMoltran/vendor/friendsofsymfony/user-bundle/Resources/views/Resetting/request_content.html.twig");
+", "FOSUserBundle:Resetting:request_content.html.twig", "/home/faky/Documents/Moltrant/vendor/friendsofsymfony/user-bundle/Resources/views/Resetting/request_content.html.twig");
     }
 }

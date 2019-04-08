@@ -1283,6 +1283,6 @@ $context["voter_detail"], "vote", [], "array") == twig_constant("Symfony\\Compon
         </table>
     {% endif %}
 {% endblock %}
-", "SecurityBundle:Collector:security.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "SecurityBundle:Collector:security.html.twig", "/home/faky/Documents/Moltrant/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

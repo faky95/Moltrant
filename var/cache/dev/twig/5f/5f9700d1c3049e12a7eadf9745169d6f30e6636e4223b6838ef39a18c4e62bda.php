@@ -31,6 +31,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
             'header' => [$this, 'block_header'],
             'section' => [$this, 'block_section'],
             'footer' => [$this, 'block_footer'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -56,7 +57,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 4
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -65,7 +66,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        // line 5
+        // line 4
         $this->displayParentBlock("title", $context, $blocks);
         echo "
 ";
@@ -77,7 +78,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 8
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -86,13 +87,13 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 9
+        // line 8
         $this->displayBlock('header', $context, $blocks);
-        // line 12
+        // line 11
         $this->displayBlock('section', $context, $blocks);
-        // line 123
+        // line 122
         $this->displayBlock('footer', $context, $blocks);
-        // line 126
+        // line 125
         echo "
 ";
         
@@ -103,7 +104,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 9
+    // line 8
     public function block_header($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -112,7 +113,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 10
+        // line 9
         $this->displayParentBlock("header", $context, $blocks);
         echo "
 ";
@@ -124,7 +125,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 12
+    // line 11
     public function block_section($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -133,7 +134,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
 
-        // line 13
+        // line 12
         echo "
 
         <div class=\"wrapper\">
@@ -152,11 +153,11 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                         <div class=\"row\">
                             <div class=\"col-sm-6\">
                                 <div class=\"m-b-30\">
-                                    <button id=\"addToTable\" class=\"btn btn-primary waves-effect waves-light\">Add <i class=\"fa fa-plus\"></i></button>
+                                    <button id=\"addToTable\" class=\"btn btn-primary waves-effect waves-light\">Ajouter <i class=\"fa fa-plus\"></i></button>
                                 </div>
                             </div>
                         </div>
-                        <table class=\"table table-bordered table-striped\" id=\"datatable-editable\">
+                        <table class=\"table table-bordered table-striped\" id=\"datatable-editable\" data-leschamps=\"nomService, description\">
                             <thead>
                                 <tr>
                                     <th>Nom Service</th>
@@ -164,45 +165,50 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                                     <th>Actions</th>
                                 </tr>
                             </thead>
+                            <tbody>
                             ";
         // line 43
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 43, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["service"]) {
             // line 44
-            echo "                            <tbody>
-                                <tr class=\"gradeX\">
+            echo "                                <tr class=\"gradeX\">
                                     <td>";
-            // line 46
+            // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["service"], "nomService", []), "html", null, true);
             echo "</td>
                                     <td>";
-            // line 47
+            // line 46
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["service"], "description", []), "html", null, true);
             echo "</td>
                                     <td class=\"actions\">
                                         <a href=\"#\" class=\"on-default show-row\"><i class=\"fa fa-eye\"></i></a>
                                         ";
-            // line 50
+            // line 49
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 51
-                echo "                                        <a href=\"#\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
-                                        <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
-                                        <a href=\"#\" class=\"on-default edit-row\"><i class=\"fa fa-pencil\"></i></a>
-                                        <a href=\"#\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
+                // line 50
+                echo "                                            <a href=\"#\" data-id=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["service"], "id", []), "html", null, true);
+                echo "\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
+                                            <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
+                                            <a href=\"#\" class=\"on-default edit-row\"><i class=\"fa fa-pencil\"></i></a>
+                                            <a href=\"#\" data-id=\"";
+                // line 53
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["service"], "id", []), "html", null, true);
+                echo "\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
                                         ";
             }
-            // line 56
+            // line 55
             echo "                                    </td>
                                 </tr>
-                            </tbody>
                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['service'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
-        echo "                        </table>
+        // line 58
+        echo "                            </tbody>
+                        </table>
                     </div>
                     <!-- end: page -->
 
@@ -251,7 +257,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 123
+    // line 122
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -260,9 +266,35 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 124
+        // line 123
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 128
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 129
+        echo "    ";
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+    <script src=\"";
+        // line 130
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/pages/datatables.editable.init.js"), "html", null, true);
+        echo "\"></script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -284,13 +316,12 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     public function getDebugInfo()
     {
-        return array (  264 => 124,  255 => 123,  205 => 60,  196 => 56,  189 => 51,  187 => 50,  181 => 47,  177 => 46,  173 => 44,  169 => 43,  137 => 13,  128 => 12,  116 => 10,  107 => 9,  96 => 126,  94 => 123,  92 => 12,  90 => 9,  81 => 8,  69 => 5,  60 => 4,  27 => 1,);
+        return array (  296 => 130,  291 => 129,  282 => 128,  270 => 123,  261 => 122,  210 => 58,  202 => 55,  197 => 53,  190 => 50,  188 => 49,  182 => 46,  178 => 45,  175 => 44,  171 => 43,  138 => 12,  129 => 11,  117 => 9,  108 => 8,  97 => 125,  95 => 122,  93 => 11,  91 => 8,  82 => 7,  70 => 4,  61 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'serviceLayout.html.twig' %}
-
 
 {% block title %}
 {{parent()}}
@@ -319,11 +350,11 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                         <div class=\"row\">
                             <div class=\"col-sm-6\">
                                 <div class=\"m-b-30\">
-                                    <button id=\"addToTable\" class=\"btn btn-primary waves-effect waves-light\">Add <i class=\"fa fa-plus\"></i></button>
+                                    <button id=\"addToTable\" class=\"btn btn-primary waves-effect waves-light\">Ajouter <i class=\"fa fa-plus\"></i></button>
                                 </div>
                             </div>
                         </div>
-                        <table class=\"table table-bordered table-striped\" id=\"datatable-editable\">
+                        <table class=\"table table-bordered table-striped\" id=\"datatable-editable\" data-leschamps=\"nomService, description\">
                             <thead>
                                 <tr>
                                     <th>Nom Service</th>
@@ -331,23 +362,23 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            {% for service in services %}
                             <tbody>
+                            {% for service in services %}
                                 <tr class=\"gradeX\">
                                     <td>{{service.nomService}}</td>
                                     <td>{{service.description}}</td>
                                     <td class=\"actions\">
                                         <a href=\"#\" class=\"on-default show-row\"><i class=\"fa fa-eye\"></i></a>
                                         {% if is_granted('ROLE_ADMIN') %}
-                                        <a href=\"#\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
-                                        <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
-                                        <a href=\"#\" class=\"on-default edit-row\"><i class=\"fa fa-pencil\"></i></a>
-                                        <a href=\"#\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
+                                            <a href=\"#\" data-id=\"{{ service.id }}\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
+                                            <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
+                                            <a href=\"#\" class=\"on-default edit-row\"><i class=\"fa fa-pencil\"></i></a>
+                                            <a href=\"#\" data-id=\"{{ service.id }}\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
                                         {% endif %}
                                     </td>
                                 </tr>
-                            </tbody>
                             {% endfor %}
+                            </tbody>
                         </table>
                     </div>
                     <!-- end: page -->
@@ -416,6 +447,11 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 {% endblock %}
 
 {% endblock %}
-", "service/list.html.twig", "/home/faky/Documents/EnablisMoltran/templates/service/list.html.twig");
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src=\"{{ asset('assets/pages/datatables.editable.init.js')}}\"></script>
+{% endblock %}
+", "service/list.html.twig", "/home/faky/Documents/Moltrant/templates/service/list.html.twig");
     }
 }

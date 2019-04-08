@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Form\RegistrationFormType;
 use App\Entity\Utilisateur;
 use App\Entity\Image;
-use App\Entity\Photo;
+
 
 class HomeController extends AbstractController
 {
@@ -35,8 +35,12 @@ class HomeController extends AbstractController
         foreach($images as $key=>$img){
             $img->setImage(base64_encode(stream_get_contents($img->getImage())));
         }
+        $user = $em->getRepository(Utilisateur::class)->findAll();
+        foreach($user as $key=>$img){
+            $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
+        }
         return $this->render('home/home.html.twig',array(
-            'entities'=>$images
+            'entities'=>$images,
         ));
     }
 
@@ -51,26 +55,23 @@ class HomeController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         //Build a form
         $user = new Utilisateur();
-        $photo = new Photo();
-        $user->setPhoto($photo->setAvatar(file_get_contents($photo->getAvatar())));
         $form = $this->createForm(RegistrationFormType::class, $user);            
         //handle the submit with post
         
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
+            $user->setPhoto(file_get_contents($user->getPhoto()));
+            $user->setMatricule($user->getNom().'+'.$user->getId());
             $user->setEnabled(1);
             $em->persist($user);
             $em->flush();
             
             return $this->redirectToRoute("fos_user_security_login");
         }
-        $userId=$user->getId();
-        $photo->setAvatar(file_get_contents($photo->getAvatar()));
-        $photo->setUtilisateur($userId);
-
-        return $this->render('home/register.html.twig', [
+       
+        return $this->render('home/register.html.twig',array(
             'form' => $form->createView(),
-        ]);
+        ));
     }
 }

@@ -477,6 +477,6 @@ class __TwigTemplate_8bf83a415ace15fcd983a8075b41139e35a40c58c47b1d1a1df0d37ae3a
         {% endfor %}
     </table>
 {% endmacro %}
-", "WebProfilerBundle:Collector:events.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "WebProfilerBundle:Collector:events.html.twig", "/home/faky/Documents/Moltrant/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

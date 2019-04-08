@@ -85,6 +85,6 @@ class __TwigTemplate_b1b9ad47a912397488fca810838695a861b119d9803075a89793ea684c3
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
 </div>
-", "FOSUserBundle:Profile:show_content.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/show_content.html.twig");
+", "FOSUserBundle:Profile:show_content.html.twig", "/home/faky/Documents/Moltrant/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/show_content.html.twig");
     }
 }

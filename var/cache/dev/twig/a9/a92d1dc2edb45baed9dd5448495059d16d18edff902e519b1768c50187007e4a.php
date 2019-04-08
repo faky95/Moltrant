@@ -371,6 +371,6 @@ class __TwigTemplate_e4831b304e065c432f461d2ba818f0fda8da141c0d8c6ea95b0a574e3f8
         {% endblock %}
 \t
 \t</body>
-</html>", "home/register.html.twig", "/home/faky/Documents/EnablisMoltran/templates/home/register.html.twig");
+</html>", "home/register.html.twig", "/home/faky/Documents/Moltrant/templates/home/register.html.twig");
     }
 }

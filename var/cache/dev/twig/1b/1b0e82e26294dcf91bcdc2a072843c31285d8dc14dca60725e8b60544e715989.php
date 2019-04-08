@@ -74,7 +74,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
         // line 171
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 193
+        // line 191
         echo "    </body>
 </html>
 ";
@@ -534,11 +534,6 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
         // line 189
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/plugins/datatables/dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
-\t    <script src=\"";
-        // line 190
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/pages/datatables.editable.init.js"), "html", null, true);
-        echo "\"></script>
-        
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -560,7 +555,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
 
     public function getDebugInfo()
     {
-        return array (  539 => 190,  535 => 189,  531 => 188,  527 => 187,  521 => 184,  515 => 181,  511 => 180,  507 => 179,  503 => 178,  499 => 177,  495 => 176,  491 => 175,  487 => 174,  483 => 173,  480 => 172,  471 => 171,  441 => 150,  434 => 145,  425 => 144,  415 => 143,  406 => 142,  396 => 141,  387 => 140,  377 => 139,  368 => 138,  358 => 137,  349 => 136,  331 => 127,  317 => 115,  315 => 114,  283 => 85,  254 => 59,  241 => 51,  227 => 40,  218 => 33,  209 => 32,  199 => 170,  196 => 144,  193 => 142,  190 => 140,  187 => 138,  184 => 136,  181 => 32,  172 => 31,  160 => 27,  155 => 25,  151 => 24,  147 => 23,  143 => 22,  139 => 21,  135 => 20,  131 => 19,  126 => 17,  119 => 12,  110 => 11,  99 => 8,  90 => 7,  78 => 193,  75 => 171,  73 => 31,  69 => 29,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
+        return array (  535 => 189,  531 => 188,  527 => 187,  521 => 184,  515 => 181,  511 => 180,  507 => 179,  503 => 178,  499 => 177,  495 => 176,  491 => 175,  487 => 174,  483 => 173,  480 => 172,  471 => 171,  441 => 150,  434 => 145,  425 => 144,  415 => 143,  406 => 142,  396 => 141,  387 => 140,  377 => 139,  368 => 138,  358 => 137,  349 => 136,  331 => 127,  317 => 115,  315 => 114,  283 => 85,  254 => 59,  241 => 51,  227 => 40,  218 => 33,  209 => 32,  199 => 170,  196 => 144,  193 => 142,  190 => 140,  187 => 138,  184 => 136,  181 => 32,  172 => 31,  160 => 27,  155 => 25,  151 => 24,  147 => 23,  143 => 22,  139 => 21,  135 => 20,  131 => 19,  126 => 17,  119 => 12,  110 => 11,  99 => 8,  90 => 7,  78 => 191,  75 => 171,  73 => 31,  69 => 29,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -754,11 +749,9 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
 \t    <script src=\"{{ asset('assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js')}}\"></script>
 \t    <script src=\"{{ asset('assets/plugins/jquery-datatables-editable/jquery.dataTables.js')}}\"></script>
 \t    <script src=\"{{ asset('assets/plugins/datatables/dataTables.bootstrap.js')}}\"></script>
-\t    <script src=\"{{ asset('assets/pages/datatables.editable.init.js')}}\"></script>
-        
         {% endblock %}
     </body>
 </html>
-", "serviceLayout.html.twig", "/home/faky/Documents/EnablisMoltran/templates/serviceLayout.html.twig");
+", "serviceLayout.html.twig", "/home/faky/Documents/Moltrant/templates/serviceLayout.html.twig");
     }
 }

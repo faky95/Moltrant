@@ -602,6 +602,6 @@ $context["key"] == "hit_read_ratio")) {
         </div>
     {% endif %}
 {% endblock %}
-", "WebProfilerBundle:Collector:cache.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/web-profiler-bundle/Resources/views/Collector/cache.html.twig");
+", "WebProfilerBundle:Collector:cache.html.twig", "/home/faky/Documents/Moltrant/vendor/symfony/web-profiler-bundle/Resources/views/Collector/cache.html.twig");
     }
 }

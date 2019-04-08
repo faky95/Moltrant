@@ -111,6 +111,6 @@ class __TwigTemplate_64202ead817ae628efce905f021633a44e0f2a956d950c149767287faa9
     <p><a href=\"{{ targetUrl }}\">{{ 'registration.back'|trans }}</a></p>
     {% endif %}
 {% endblock fos_user_content %}
-", "FOSUserBundle:Registration:confirmed.html.twig", "/home/faky/Bureau/IntranetEnablis/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/confirmed.html.twig");
+", "FOSUserBundle:Registration:confirmed.html.twig", "/home/faky/Documents/Moltrant/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/confirmed.html.twig");
     }
 }

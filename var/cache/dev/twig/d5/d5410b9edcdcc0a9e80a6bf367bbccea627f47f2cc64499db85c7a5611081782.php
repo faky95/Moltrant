@@ -102,6 +102,6 @@ class __TwigTemplate_5a4be2686a83e37e11ffc9842d942bc2ea2de51d79a263e6569e30612bb
   {{ include('@Twig/Exception/trace.txt.twig', { trace: trace }, with_context = false) }}
 {% endfor %}
 {% endif %}
-", "TwigBundle:Exception:traces.txt.twig", "/home/faky/Bureau/IntranetEnablis/vendor/symfony/twig-bundle/Resources/views/Exception/traces.txt.twig");
+", "TwigBundle:Exception:traces.txt.twig", "/home/faky/Documents/Moltrant/vendor/symfony/twig-bundle/Resources/views/Exception/traces.txt.twig");
     }
 }

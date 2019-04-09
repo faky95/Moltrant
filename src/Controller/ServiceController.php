@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Service;
 use App\Entity\Utilisateur;
 
+
  /**
 * @Route("/service")
 */
@@ -25,4 +26,38 @@ class ServiceController extends AbstractController
         }
         return $this->render('service/list.html.twig',['services'=>$services]);
     }
+
+    /**
+     * @Route("/coach",name="coach")
+     */
+    public function listCoach()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $user = $em->getRepository(Utilisateur::class)->findAll();
+        foreach($user as $key=>$img){
+            $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
+        }
+        $listCoach = $em->getRepository(Utilisateur::class)->allCoach();
+        return $this->render('service/listCoach.html.twig',[
+            'list'=>$listCoach
+        ]);
+    }
+
+    /**
+     * @Route("/enabler",name="enabler")
+     */
+    public function listEnabler()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $user = $em->getRepository(Utilisateur::class)->findAll();
+        foreach($user as $key=>$img){
+            $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
+        }
+        $listEnabler = $em->getRepository(Utilisateur::class)->allEnabler();
+        return $this->render('service/enabler.html.twig',[
+            'list'=>$listEnabler
+        ]);
+    }
+
+
 }

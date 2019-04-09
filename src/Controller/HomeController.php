@@ -62,7 +62,7 @@ class HomeController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             $user->setPhoto(file_get_contents($user->getPhoto()));
-            $user->setMatricule($user->getNom().'+'.$user->getId());
+            $user->setMatricule(strtoupper($user->getPrenom()).''.strtoupper($user->getNom()).''.$user->getId());
             $user->setEnabled(1);
             $em->persist($user);
             $em->flush();
@@ -74,4 +74,18 @@ class HomeController extends AbstractController
             'form' => $form->createView(),
         ));
     }
+
+    /**
+	 * @Route("/mail", name="mail")
+	 */
+	public function indexAction(\Swift_Mailer $mailer)
+	{
+		$message = (new \Swift_Message('Hello Email'))
+		->setFrom(array('info.senegal@enablis.org'=>'Enablis Intranet'))
+        ->setTo('fakyndao95@gmail.com')
+        ->setCc('mahsa.zadeh@enablis.org')
+        ->setBody('ok');
+		 $mailer->send($message);
+		return $this->render('home/mail.html.twig');
+	}
 }

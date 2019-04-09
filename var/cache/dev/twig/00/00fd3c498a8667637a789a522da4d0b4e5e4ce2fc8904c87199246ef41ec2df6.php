@@ -110,9 +110,9 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
         // line 10
         $this->displayBlock('header', $context, $blocks);
-        // line 114
+        // line 115
         $this->displayBlock('section', $context, $blocks);
-        // line 192
+        // line 193
         $this->displayBlock('footer', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -167,10 +167,21 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
         // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
         echo "\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
                                     <li><a href=\"";
-        // line 37
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("screen_lock");
+        echo "\"><i class=\"md md-lock\"></i> Lock screen</a></li>
+                                    ";
+        // line 36
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 37
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+            echo "\"><i class=\"md md-add-box\"></i> Register</a></li>
+                                    ";
+        }
+        // line 39
+        echo "                                    <li><a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
         echo "\"><i class=\"md md-settings-power\"></i> Logout</a></li>
                                 </ul>
@@ -199,7 +210,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                         <ul class=\"navigation-menu\">
                             <li class=\"active\">
                                 <a href=\"";
-        // line 63
+        // line 65
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"><i class=\"md md-home\"></i> <span> Dashboard </span> </a>
                             </li>
@@ -209,21 +220,26 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"article-details.html\">Demander un Service</a></li>
-                                    <li><a href=\"gallery.html\">Inscription au Programme Enabler</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Coachs</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Enablers</a></li>
+                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"";
+        // line 74
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coach");
+        echo "\">Liste des Coachs</a></li>
+                                    <li><a href=\"";
+        // line 75
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("enabler");
+        echo "\">Liste des Enablers</a></li>
                                 </ul>
                             </li>
 
                             <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-invert-colors-on\"></i> <span> Mon Accompagnement </span> </a>
                                 <ul class=\"submenu\">
-                                    <li><a href=\"gallery.html\">Rapport du diagnostic</a></li>
+                                    <li><a href=\"\">Rapport du diagnostic</a></li>
                                     <li><a href=\"mentor-details.html\">Rapport du plan de developpement</a></li>
-                                    <li><a href=\"gallery.html\">Mes Participations</a></li>
-                                    <li><a href=\"gallery.html\">Services Payants</a></li>
-                                    <li><a href=\"gallery.html\">Mes Coachs, mentors, enablers</a></li>
+                                    <li><a href=\"\">Mes Participations</a></li>
+                                    <li><a href=\"\">Services Payants</a></li>
+                                    <li><a href=\"\">Mes Coachs, mentors, enablers</a></li>
                                 </ul>
                             </li>
 
@@ -231,9 +247,9 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 <a href=\"#\"><i class=\"md md-redeem\"></i> <span> Forum </span> </a>
                             </li>
                             ";
-        // line 92
+        // line 93
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_COACH")) {
-            // line 93
+            // line 94
             echo "                            <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-pages\"></i><span>Espace Coach </span> </a>
                                 <ul class=\"submenu megamenu\">
@@ -247,7 +263,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                             </li>
                             ";
         }
-        // line 105
+        // line 106
         echo "
                         </ul>
                         <!-- End navigation menu  -->
@@ -265,7 +281,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
     }
 
-    // line 114
+    // line 115
     public function block_section($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -274,7 +290,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
 
-        // line 115
+        // line 116
         echo "    <div class=\"wrapper\">
             <div class=\"\">
 
@@ -282,9 +298,9 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                 <div class=\"row\">
                     <div class=\"col-sm-12\">
                         ";
-        // line 121
+        // line 122
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 122
+            // line 123
             echo "                        <div class=\"btn-group pull-right\">
                             <button type=\"button\" class=\"btn btn-primary dropdown-toggle waves-effect waves-light\" data-toggle=\"dropdown\" aria-expanded=\"false\">Settings <span class=\"m-l-5\"><i class=\"fa fa-cog\"></i></span></button>
                             <ul class=\"dropdown-menu\" role=\"menu\">
@@ -297,20 +313,20 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                         </div>
                         ";
         }
-        // line 133
+        // line 134
         echo "                        <h4 class=\"page-title\">Welcome To Enablis Coworking!</h4>
                     </div>
                 </div>
                ";
-        // line 148
+        // line 149
         echo " <!-- End row -->
 <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
     <!-- Indicators -->
     <ol class=\"carousel-indicators\">
         ";
-        // line 152
+        // line 153
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 152, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 153, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -325,22 +341,22 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 153
+            // line 154
             echo "            ";
             if ((twig_get_attribute($this->env, $this->source, $context["loop"], "index", []) == 1)) {
-                // line 154
+                // line 155
                 echo "                <li data-target=\"#myCarousel\" data-slide-to=\"";
                 echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["loop"], "index", []) - 1), "html", null, true);
                 echo "\" class=\"active\"></li>
             ";
             } else {
-                // line 156
+                // line 157
                 echo "                <li data-target=\"#myCarousel\" data-slide-to=\"";
                 echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["loop"], "index", []) - 1), "html", null, true);
                 echo "\"></li>
             ";
             }
-            // line 158
+            // line 159
             echo "        ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -354,15 +370,15 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 159
+        // line 160
         echo "    </ol>
 
     <!-- Wrapper for slides -->
     <div class=\"carousel-inner\">
         ";
-        // line 163
+        // line 164
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 163, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 164, $this->source); })()));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -377,13 +393,13 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 164
+            // line 165
             echo "            ";
             if ((twig_get_attribute($this->env, $this->source, $context["loop"], "index", []) == 1)) {
-                // line 165
+                // line 166
                 echo "                <div class=\"item active\">
                     <img src=\"data:image/png;base64,";
-                // line 166
+                // line 167
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "image", []), "html", null, true);
                 echo "\" alt=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "titre", []), "html", null, true);
@@ -391,10 +407,10 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                 </div>
             ";
             } else {
-                // line 169
+                // line 170
                 echo "                <div class=\"item\">
                     <img src=\"data:image/png;base64,";
-                // line 170
+                // line 171
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "image", []), "html", null, true);
                 echo "\" alt=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "titre", []), "html", null, true);
@@ -402,7 +418,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                 </div>
             ";
             }
-            // line 173
+            // line 174
             echo "        ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -416,7 +432,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 174
+        // line 175
         echo "    </div>
 
     <!-- Left and right controls -->
@@ -443,7 +459,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
     }
 
-    // line 192
+    // line 193
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -452,7 +468,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 193
+        // line 194
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
 ";
@@ -476,7 +492,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
     public function getDebugInfo()
     {
-        return array (  456 => 193,  447 => 192,  420 => 174,  406 => 173,  398 => 170,  395 => 169,  387 => 166,  384 => 165,  381 => 164,  364 => 163,  358 => 159,  344 => 158,  338 => 156,  332 => 154,  329 => 153,  312 => 152,  306 => 148,  301 => 133,  288 => 122,  286 => 121,  278 => 115,  269 => 114,  251 => 105,  237 => 93,  235 => 92,  203 => 63,  174 => 37,  168 => 34,  158 => 29,  144 => 18,  135 => 11,  126 => 10,  116 => 192,  114 => 114,  112 => 10,  103 => 9,  91 => 7,  82 => 6,  70 => 4,  61 => 3,  27 => 1,);
+        return array (  472 => 194,  463 => 193,  436 => 175,  422 => 174,  414 => 171,  411 => 170,  403 => 167,  400 => 166,  397 => 165,  380 => 164,  374 => 160,  360 => 159,  354 => 157,  348 => 155,  345 => 154,  328 => 153,  322 => 149,  317 => 134,  304 => 123,  302 => 122,  294 => 116,  285 => 115,  267 => 106,  253 => 94,  251 => 93,  230 => 75,  226 => 74,  214 => 65,  184 => 39,  178 => 37,  176 => 36,  172 => 35,  168 => 34,  158 => 29,  144 => 18,  135 => 11,  126 => 10,  116 => 193,  114 => 115,  112 => 10,  103 => 9,  91 => 7,  82 => 6,  70 => 4,  61 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -515,8 +531,10 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
                                 <ul class=\"dropdown-menu\">
                                     <li><a href=\"{{path('profile')}}\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
+                                    <li><a href=\"{{path('screen_lock')}}\"><i class=\"md md-lock\"></i> Lock screen</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a href=\"{{path('register')}}\"><i class=\"md md-add-box\"></i> Register</a></li>
+                                    {% endif %}
                                     <li><a href=\"{{ path('fos_user_security_logout') }}\"><i class=\"md md-settings-power\"></i> Logout</a></li>
                                 </ul>
                             </li>
@@ -551,21 +569,20 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"article-details.html\">Demander un Service</a></li>
-                                    <li><a href=\"gallery.html\">Inscription au Programme Enabler</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Coachs</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Enablers</a></li>
+                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"{{path('coach')}}\">Liste des Coachs</a></li>
+                                    <li><a href=\"{{path('enabler')}}\">Liste des Enablers</a></li>
                                 </ul>
                             </li>
 
                             <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-invert-colors-on\"></i> <span> Mon Accompagnement </span> </a>
                                 <ul class=\"submenu\">
-                                    <li><a href=\"gallery.html\">Rapport du diagnostic</a></li>
+                                    <li><a href=\"\">Rapport du diagnostic</a></li>
                                     <li><a href=\"mentor-details.html\">Rapport du plan de developpement</a></li>
-                                    <li><a href=\"gallery.html\">Mes Participations</a></li>
-                                    <li><a href=\"gallery.html\">Services Payants</a></li>
-                                    <li><a href=\"gallery.html\">Mes Coachs, mentors, enablers</a></li>
+                                    <li><a href=\"\">Mes Participations</a></li>
+                                    <li><a href=\"\">Services Payants</a></li>
+                                    <li><a href=\"\">Mes Coachs, mentors, enablers</a></li>
                                 </ul>
                             </li>
 

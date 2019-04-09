@@ -88,11 +88,11 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
         // line 8
         $this->displayBlock('header', $context, $blocks);
-        // line 112
+        // line 110
         $this->displayBlock('section', $context, $blocks);
-        // line 502
+        // line 412
         $this->displayBlock('footer', $context, $blocks);
-        // line 505
+        // line 415
         echo "
 ";
         
@@ -148,10 +148,12 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
         // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
         echo "\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
                                     <li><a href=\"";
-        // line 35
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("screen_lock");
+        echo "\"><i class=\"md md-lock\"></i> Lock screen</a></li>
+                                    <li><a href=\"";
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
         echo "\"><i class=\"md md-settings-power\"></i> Logout</a></li>
                                 </ul>
@@ -180,7 +182,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                         <ul class=\"navigation-menu\">
                             <li class=\"active\">
                                 <a href=\"";
-        // line 61
+        // line 60
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"><i class=\"md md-home\"></i> <span> Dashboard </span> </a>
                             </li>
@@ -190,21 +192,26 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"article-details.html\">Demander un Service</a></li>
-                                    <li><a href=\"gallery.html\">Inscription au Programme Enabler</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Coachs</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Enablers</a></li>
+                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"";
+        // line 69
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coach");
+        echo "\">Liste des Coachs</a></li>
+                                    <li><a href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("enabler");
+        echo "\">Liste des Enablers</a></li>
                                 </ul>
                             </li>
 
                             <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-invert-colors-on\"></i> <span> Mon Accompagnement </span> </a>
                                 <ul class=\"submenu\">
-                                    <li><a href=\"gallery.html\">Rapport du diagnostic</a></li>
+                                    <li><a href=\"\">Rapport du diagnostic</a></li>
                                     <li><a href=\"mentor-details.html\">Rapport du plan de developpement</a></li>
-                                    <li><a href=\"gallery.html\">Mes Participations</a></li>
-                                    <li><a href=\"gallery.html\">Services Payants</a></li>
-                                    <li><a href=\"gallery.html\">Mes Coachs, mentors, enablers</a></li>
+                                    <li><a href=\"\">Mes Participations</a></li>
+                                    <li><a href=\"\">Services Payants</a></li>
+                                    <li><a href=\"\">Mes Coachs, mentors, enablers</a></li>
                                 </ul>
                             </li>
 
@@ -212,9 +219,9 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <a href=\"#\"><i class=\"md md-redeem\"></i> <span> Forum </span> </a>
                             </li>
                             ";
-        // line 90
+        // line 88
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_COACH")) {
-            // line 91
+            // line 89
             echo "                            <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-pages\"></i><span>Espace Coach </span> </a>
                                 <ul class=\"submenu megamenu\">
@@ -228,7 +235,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                             </li>
                             ";
         }
-        // line 103
+        // line 101
         echo "
                         </ul>
                         <!-- End navigation menu  -->
@@ -246,7 +253,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
     }
 
-    // line 112
+    // line 110
     public function block_section($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -255,7 +262,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
 
-        // line 113
+        // line 111
         echo "<div class=\"wrapper\">
             <div class=\"container\">
 
@@ -266,14 +273,14 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <div class=\"bg-picture-overlay\"></div>
                                 <div class=\"profile-info-name\">
                                     <img src=\"data:image/png;base64,";
-        // line 122
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 122, $this->source); })()), "user", []), "photo", []), "html", null, true);
+        // line 120
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 120, $this->source); })()), "user", []), "photo", []), "html", null, true);
         echo "\" class=\"thumb-lg img-circle img-thumbnail\" alt=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 122, $this->source); })()), "user", []), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 120, $this->source); })()), "user", []), "html", null, true);
         echo "\">
                                     <h3 class=\"text-white\">";
-        // line 123
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 123, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
+        // line 121
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 121, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
         echo "</h3>
                                 </div>
                             </div>
@@ -295,34 +302,18 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                     <span class=\"hidden-xs\">Activities</span>
                                 </a>
                             </li>
-                            <li class=\"tab\">
-                                <a href=\"#messages-2\" data-toggle=\"tab\" aria-expanded=\"true\">
-                                    <span class=\"visible-xs\"><i class=\"fa fa-envelope-o\"></i></span>
-                                    <span class=\"hidden-xs\">Projects</span>
-                                </a>
-                            </li>
-                            <li class=\"tab\">
+                            ";
+        // line 148
+        echo "                            <li class=\"tab\">
                                 <a href=\"#settings-2\" data-toggle=\"tab\" aria-expanded=\"false\">
                                     <span class=\"visible-xs\"><i class=\"fa fa-cog\"></i></span>
                                     <span class=\"hidden-xs\">Settings</span>
                                 </a>
                             </li>
                         <div class=\"indicator\"></div></ul>
-                        </div>
-                        <div class=\"col-lg-6 col-md-3 col-sm-3 hidden-xs\">
-                            <div class=\"pull-right\">
-                                <div class=\"dropdown\">
-                                    <a data-toggle=\"dropdown\" class=\"dropdown-toggle btn-rounded btn btn-primary waves-effect waves-light\" href=\"#\"> Following <span class=\"caret\"></span></a>
-                                    <ul class=\"dropdown-menu dropdown-menu-right\" role=\"menu\">
-                                        <li><a href=\"#\">Poke</a></li>
-                                        <li><a href=\"#\">Private message</a></li>
-                                        <li class=\"divider\"></li>
-                                        <li><a href=\"#\">Unfollow</a></li>
-                                    </ul>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
+                        ";
+        // line 169
+        echo "                    </div>
                     <div class=\"row\">
                         <div class=\"col-lg-12\">
 
@@ -339,41 +330,38 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                                 <div class=\"about-info-p\">
                                                     <strong>Full Name</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">Johnathan Deo</p>
+                                                    <p class=\"text-muted\">";
+        // line 186
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 186, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
+        echo "</p>
                                                 </div>
                                                 <div class=\"about-info-p\">
                                                     <strong>Mobile</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">(123) 123 1234</p>
+                                                    <p class=\"text-muted\">";
+        // line 191
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 191, $this->source); })()), "user", []), "telephone", []), "html", null, true);
+        echo "</p>
                                                 </div>
                                                 <div class=\"about-info-p\">
                                                     <strong>Email</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">johnathandeon @moltran.com</p>
+                                                    <p class=\"text-muted\">";
+        // line 196
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 196, $this->source); })()), "user", []), "email", []), "html", null, true);
+        echo "</p>
                                                 </div>
                                                 <div class=\"about-info-p m-b-0\">
                                                     <strong>Location</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">USA</p>
+                                                    <p class=\"text-muted\">";
+        // line 201
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 201, $this->source); })()), "user", []), "localite", []), "html", null, true);
+        echo "</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Personal-Information -->
-
-                                        <!-- Languages -->
-                                        <div class=\"panel panel-default panel-fill\">
-                                            <div class=\"panel-heading\">
-                                                <h3 class=\"panel-title\">Languages</h3>
-                                            </div>
-                                            <div class=\"panel-body\">
-                                                <ul>
-                                                    <li>English</li>
-                                                    <li>Franch</li>
-                                                    <li>Greek</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- Languages -->
 
                                     </div>
 
@@ -504,79 +492,6 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <!-- Personal-Information -->
                             </div>
 
-
-
-                            <div class=\"tab-pane\" id=\"messages-2\">
-                                <!-- Personal-Information -->
-                                <div class=\"panel panel-default panel-fill\">
-                                    <div class=\"panel-heading\">
-                                        <h3 class=\"panel-title\">My Projects</h3>
-                                    </div>
-                                    <div class=\"panel-body\">
-                                        <div class=\"table-responsive\">
-                                                            <table class=\"table\">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Project Name</th>
-                                                                        <th>Start Date</th>
-                                                                        <th>Due Date</th>
-                                                                        <th>Status</th>
-                                                                        <th>Assign</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>1</td>
-                                                                        <td>Moltran Admin</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-info\">Work in Progress</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2</td>
-                                                                        <td>Moltran Frontend</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-success\">Pending</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>3</td>
-                                                                        <td>Moltran Admin</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-pink\">Done</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>4</td>
-                                                                        <td>Moltran Frontend</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-purple\">Work in Progress</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>5</td>
-                                                                        <td>Moltran Admin</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-warning\">Coming soon</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- Personal-Information -->
-                            </div>
-
-
                             <div class=\"tab-pane\" id=\"settings-2\">
                                 <!-- Personal-Information -->
                                 <div class=\"panel panel-default panel-fill\">
@@ -587,15 +502,24 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                         <form role=\"form\">
                                             <div class=\"form-group\">
                                                 <label for=\"FullName\">Full Name</label>
-                                                <input type=\"text\" value=\"John Doe\" id=\"FullName\" class=\"form-control\">
+                                                <input type=\"text\" value=\"";
+        // line 346
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 346, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
+        echo "\" id=\"FullName\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Email\">Email</label>
-                                                <input type=\"email\" value=\"first.last@example.com\" id=\"Email\" class=\"form-control\">
+                                                <input type=\"email\" value=\"";
+        // line 350
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 350, $this->source); })()), "user", []), "email", []), "html", null, true);
+        echo "\" id=\"Email\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Username\">Username</label>
-                                                <input type=\"text\" value=\"john\" id=\"Username\" class=\"form-control\">
+                                                <input type=\"text\" value=\"";
+        // line 354
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 354, $this->source); })()), "user", []), "html", null, true);
+        echo "\" id=\"Username\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Password\">Password</label>
@@ -661,7 +585,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
     }
 
-    // line 502
+    // line 412
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -670,7 +594,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 503
+        // line 413
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
 ";
@@ -694,7 +618,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
     public function getDebugInfo()
     {
-        return array (  674 => 503,  665 => 502,  276 => 123,  270 => 122,  259 => 113,  250 => 112,  232 => 103,  218 => 91,  216 => 90,  184 => 61,  155 => 35,  149 => 32,  139 => 27,  125 => 16,  116 => 9,  107 => 8,  96 => 505,  94 => 502,  92 => 112,  90 => 8,  81 => 7,  69 => 4,  60 => 3,  27 => 1,);
+        return array (  598 => 413,  589 => 412,  521 => 354,  514 => 350,  507 => 346,  359 => 201,  351 => 196,  343 => 191,  335 => 186,  316 => 169,  307 => 148,  283 => 121,  277 => 120,  266 => 111,  257 => 110,  239 => 101,  225 => 89,  223 => 88,  202 => 70,  198 => 69,  186 => 60,  157 => 34,  153 => 33,  149 => 32,  139 => 27,  125 => 16,  116 => 9,  107 => 8,  96 => 415,  94 => 412,  92 => 110,  90 => 8,  81 => 7,  69 => 4,  60 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -731,8 +655,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
                                 <ul class=\"dropdown-menu\">
                                     <li><a href=\"{{path('profile')}}\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-settings\"></i> Settings</a></li>
-                                    <li><a href=\"javascript:void(0)\"><i class=\"md md-lock\"></i> Lock screen</a></li>
+                                    <li><a href=\"{{path('screen_lock')}}\"><i class=\"md md-lock\"></i> Lock screen</a></li>
                                     <li><a href=\"{{ path('fos_user_security_logout') }}\"><i class=\"md md-settings-power\"></i> Logout</a></li>
                                 </ul>
                             </li>
@@ -767,21 +690,20 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"article-details.html\">Demander un Service</a></li>
-                                    <li><a href=\"gallery.html\">Inscription au Programme Enabler</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Coachs</a></li>
-                                    <li><a href=\"gallery.html\">Liste des Enablers</a></li>
+                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"{{path('coach')}}\">Liste des Coachs</a></li>
+                                    <li><a href=\"{{path('enabler')}}\">Liste des Enablers</a></li>
                                 </ul>
                             </li>
 
                             <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-invert-colors-on\"></i> <span> Mon Accompagnement </span> </a>
                                 <ul class=\"submenu\">
-                                    <li><a href=\"gallery.html\">Rapport du diagnostic</a></li>
+                                    <li><a href=\"\">Rapport du diagnostic</a></li>
                                     <li><a href=\"mentor-details.html\">Rapport du plan de developpement</a></li>
-                                    <li><a href=\"gallery.html\">Mes Participations</a></li>
-                                    <li><a href=\"gallery.html\">Services Payants</a></li>
-                                    <li><a href=\"gallery.html\">Mes Coachs, mentors, enablers</a></li>
+                                    <li><a href=\"\">Mes Participations</a></li>
+                                    <li><a href=\"\">Services Payants</a></li>
+                                    <li><a href=\"\">Mes Coachs, mentors, enablers</a></li>
                                 </ul>
                             </li>
 
@@ -842,12 +764,12 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                     <span class=\"hidden-xs\">Activities</span>
                                 </a>
                             </li>
-                            <li class=\"tab\">
+                            {# <li class=\"tab\">
                                 <a href=\"#messages-2\" data-toggle=\"tab\" aria-expanded=\"true\">
                                     <span class=\"visible-xs\"><i class=\"fa fa-envelope-o\"></i></span>
                                     <span class=\"hidden-xs\">Projects</span>
                                 </a>
-                            </li>
+                            </li> #}
                             <li class=\"tab\">
                                 <a href=\"#settings-2\" data-toggle=\"tab\" aria-expanded=\"false\">
                                     <span class=\"visible-xs\"><i class=\"fa fa-cog\"></i></span>
@@ -855,7 +777,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 </a>
                             </li>
                         <div class=\"indicator\"></div></ul>
-                        </div>
+                        {# </div>
                         <div class=\"col-lg-6 col-md-3 col-sm-3 hidden-xs\">
                             <div class=\"pull-right\">
                                 <div class=\"dropdown\">
@@ -868,7 +790,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                     </ul>
                                 </div>
                               </div>
-                        </div>
+                        </div> #}
                     </div>
                     <div class=\"row\">
                         <div class=\"col-lg-12\">
@@ -886,41 +808,26 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                                 <div class=\"about-info-p\">
                                                     <strong>Full Name</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">Johnathan Deo</p>
+                                                    <p class=\"text-muted\">{{app.user.nomComplet}}</p>
                                                 </div>
                                                 <div class=\"about-info-p\">
                                                     <strong>Mobile</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">(123) 123 1234</p>
+                                                    <p class=\"text-muted\">{{app.user.telephone}}</p>
                                                 </div>
                                                 <div class=\"about-info-p\">
                                                     <strong>Email</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">johnathandeon @moltran.com</p>
+                                                    <p class=\"text-muted\">{{app.user.email}}</p>
                                                 </div>
                                                 <div class=\"about-info-p m-b-0\">
                                                     <strong>Location</strong>
                                                     <br>
-                                                    <p class=\"text-muted\">USA</p>
+                                                    <p class=\"text-muted\">{{app.user.localite}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Personal-Information -->
-
-                                        <!-- Languages -->
-                                        <div class=\"panel panel-default panel-fill\">
-                                            <div class=\"panel-heading\">
-                                                <h3 class=\"panel-title\">Languages</h3>
-                                            </div>
-                                            <div class=\"panel-body\">
-                                                <ul>
-                                                    <li>English</li>
-                                                    <li>Franch</li>
-                                                    <li>Greek</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- Languages -->
 
                                     </div>
 
@@ -1051,79 +958,6 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <!-- Personal-Information -->
                             </div>
 
-
-
-                            <div class=\"tab-pane\" id=\"messages-2\">
-                                <!-- Personal-Information -->
-                                <div class=\"panel panel-default panel-fill\">
-                                    <div class=\"panel-heading\">
-                                        <h3 class=\"panel-title\">My Projects</h3>
-                                    </div>
-                                    <div class=\"panel-body\">
-                                        <div class=\"table-responsive\">
-                                                            <table class=\"table\">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Project Name</th>
-                                                                        <th>Start Date</th>
-                                                                        <th>Due Date</th>
-                                                                        <th>Status</th>
-                                                                        <th>Assign</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>1</td>
-                                                                        <td>Moltran Admin</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-info\">Work in Progress</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2</td>
-                                                                        <td>Moltran Frontend</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-success\">Pending</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>3</td>
-                                                                        <td>Moltran Admin</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-pink\">Done</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>4</td>
-                                                                        <td>Moltran Frontend</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-purple\">Work in Progress</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>5</td>
-                                                                        <td>Moltran Admin</td>
-                                                                        <td>01/01/2015</td>
-                                                                        <td>07/05/2015</td>
-                                                                        <td><span class=\"label label-warning\">Coming soon</span></td>
-                                                                        <td>Coderthemes</td>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- Personal-Information -->
-                            </div>
-
-
                             <div class=\"tab-pane\" id=\"settings-2\">
                                 <!-- Personal-Information -->
                                 <div class=\"panel panel-default panel-fill\">
@@ -1134,15 +968,15 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                         <form role=\"form\">
                                             <div class=\"form-group\">
                                                 <label for=\"FullName\">Full Name</label>
-                                                <input type=\"text\" value=\"John Doe\" id=\"FullName\" class=\"form-control\">
+                                                <input type=\"text\" value=\"{{app.user.nomComplet}}\" id=\"FullName\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Email\">Email</label>
-                                                <input type=\"email\" value=\"first.last@example.com\" id=\"Email\" class=\"form-control\">
+                                                <input type=\"email\" value=\"{{app.user.email}}\" id=\"Email\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Username\">Username</label>
-                                                <input type=\"text\" value=\"john\" id=\"Username\" class=\"form-control\">
+                                                <input type=\"text\" value=\"{{app.user}}\" id=\"Username\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Password\">Password</label>

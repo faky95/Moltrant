@@ -32,8 +32,10 @@
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{path('profile')}}"><i class="md md-face-unlock"></i> Profile</a></li>
-                                    <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
-                                    <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                    <li><a href="{{path('screen_lock')}}"><i class="md md-lock"></i> Lock screen</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a href="{{path('register')}}"><i class="md md-add-box"></i> Register</a></li>
+                                    {% endif %}
                                     <li><a href="{{ path('fos_user_security_logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
                                 </ul>
                             </li>
@@ -68,21 +70,20 @@
                                 <a href="/service/list"><i class="md md-palette "></i><span> Services Enablis </span> </a>
                                 <ul class="submenu">
                                     <li><a href="/service/list">Liste des Services</a></li>
-                                    <li><a href="article-details.html">Demander un Service</a></li>
-                                    <li><a href="gallery.html">Inscription au Programme Enabler</a></li>
-                                    <li><a href="gallery.html">Liste des Coachs</a></li>
-                                    <li><a href="gallery.html">Liste des Enablers</a></li>
+                                    <li><a href="">Inscription au Programme Enabler</a></li>
+                                    <li><a href="{{path('coach')}}">Liste des Coachs</a></li>
+                                    <li><a href="{{path('enabler')}}">Liste des Enablers</a></li>
                                 </ul>
                             </li>
 
                             <li class="has-submenu">
                                 <a href="#"><i class="md md-invert-colors-on"></i> <span> Mon Accompagnement </span> </a>
                                 <ul class="submenu">
-                                    <li><a href="gallery.html">Rapport du diagnostic</a></li>
+                                    <li><a href="">Rapport du diagnostic</a></li>
                                     <li><a href="mentor-details.html">Rapport du plan de developpement</a></li>
-                                    <li><a href="gallery.html">Mes Participations</a></li>
-                                    <li><a href="gallery.html">Services Payants</a></li>
-                                    <li><a href="gallery.html">Mes Coachs, mentors, enablers</a></li>
+                                    <li><a href="">Mes Participations</a></li>
+                                    <li><a href="">Services Payants</a></li>
+                                    <li><a href="">Mes Coachs, mentors, enablers</a></li>
                                 </ul>
                             </li>
 

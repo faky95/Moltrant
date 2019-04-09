@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use App\Entity\Utilisateur;
-use App\Entity\Photo;
+
 
 
 class RegistrationFormType extends BaseType
@@ -34,7 +34,7 @@ class RegistrationFormType extends BaseType
             ->add('date_naissance', DateType::class, array('label'=>'Date De Naissance :'))
 			->add('coach', null, array('label' => 'Est-il coach ?' ))
 			->add('isAdmin', null, array('label' => 'Est-il un administrateur ?'))
-			//->add('matricule', null, array('label' => 'Matricule :'))
+			->add('enabler', null, array('label' => 'Est-il un enabler ? '))
 			->add('plainPassword', RepeatedType::class, array(
 					'type' => PasswordType::class,
             		'options' => array('translation_domain' => 'FOSUserBundle'),

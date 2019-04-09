@@ -91,9 +91,9 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $this->displayBlock('header', $context, $blocks);
         // line 11
         $this->displayBlock('section', $context, $blocks);
-        // line 122
+        // line 123
         $this->displayBlock('footer', $context, $blocks);
-        // line 125
+        // line 126
         echo "
 ";
         
@@ -247,8 +247,11 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
         </div>
         <!-- end wrapper -->
-            <!-- MODAL -->
+        <!-- MODAL -->
         ";
+        // line 121
+        echo "        <!-- end Modal -->
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -257,7 +260,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 122
+    // line 123
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -266,7 +269,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 123
+        // line 124
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
 ";
@@ -278,7 +281,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 128
+    // line 129
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -287,12 +290,12 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 129
+        // line 130
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 130
+        // line 131
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/pages/datatables.editable.init.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -316,7 +319,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     public function getDebugInfo()
     {
-        return array (  296 => 130,  291 => 129,  282 => 128,  270 => 123,  261 => 122,  210 => 58,  202 => 55,  197 => 53,  190 => 50,  188 => 49,  182 => 46,  178 => 45,  175 => 44,  171 => 43,  138 => 12,  129 => 11,  117 => 9,  108 => 8,  97 => 125,  95 => 122,  93 => 11,  91 => 8,  82 => 7,  70 => 4,  61 => 3,  27 => 1,);
+        return array (  299 => 131,  294 => 130,  285 => 129,  273 => 124,  264 => 123,  253 => 121,  210 => 58,  202 => 55,  197 => 53,  190 => 50,  188 => 49,  182 => 46,  178 => 45,  175 => 44,  171 => 43,  138 => 12,  129 => 11,  117 => 9,  108 => 8,  97 => 126,  95 => 123,  93 => 11,  91 => 8,  82 => 7,  70 => 4,  61 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -418,7 +421,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
         </div>
         <!-- end wrapper -->
-            <!-- MODAL -->
+        <!-- MODAL -->
         {# <div id=\"dialog\" class=\"modal-block mfp-hide\">
             <section class=\"panel panel-info panel-color\">
                 <header class=\"panel-heading\">
@@ -441,6 +444,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
             </section>
         </div> #}
+        <!-- end Modal -->
 {% endblock %}
 {% block footer %}
 {{parent()}}

@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="utilisateur")
+ * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
  */
 class Utilisateur extends BaseUser
 {
@@ -111,6 +112,11 @@ class Utilisateur extends BaseUser
      * @ORM\Column(type="blob", nullable=true)
      */
     private $photo;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $enabler;
 
    
 
@@ -378,6 +384,18 @@ class Utilisateur extends BaseUser
     public function getNomComplet()
     {
         return strtoupper($this->prenom).' '.strtoupper($this->nom);
+    }
+
+    public function getEnabler(): ?bool
+    {
+        return $this->enabler;
+    }
+
+    public function setEnabler(?bool $enabler): self
+    {
+        $this->enabler = $enabler;
+
+        return $this;
     }
 
 }

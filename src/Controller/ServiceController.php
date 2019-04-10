@@ -59,5 +59,27 @@ class ServiceController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/detail/{id}", name="detail")
+     */
+    public function detail($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $service = $em->getRepository(Service::class)->find($id);
+        $user = $em->getRepository(Utilisateur::class)->findAll();
+        foreach($user as $key=>$img){
+            $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
+        }
+    	if(!$service) {
+    		$this->addFlash('error', "Impossible de voir les détails, cet service n'est pas reconnu");
+    		return $this->redirect($this->generateUrl('list'));
+    	}
+        return $this->render('service/detail.html.twig',[
+            'service'=>$service
+        ]);
+    }
+
+
+
 
 }

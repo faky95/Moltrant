@@ -45,7 +45,7 @@
                                     <td>{{service.nomService}}</td>
                                     <td>{{service.description}}</td>
                                     <td class="actions">
-                                        <a href="#" class="on-default show-row"><i class="fa fa-eye"></i></a>
+                                        <a href="{{path('detail',{id:service.id})}}" class="on-default show-row"><i class="fa fa-eye"></i></a>
                                         {% if is_granted('ROLE_ADMIN') %}
                                             <a href="#" data-id="{{ service.id }}" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                             <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
@@ -81,7 +81,7 @@
                                         <a href="#">Help</a>
                                     </li>
                                     <li>
-                                        <a href="#">Contact</a>
+                                        <a href="{{path('contact')}}">Contact</a>
                                     </li>
                                 </ul>
                             </div>

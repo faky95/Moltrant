@@ -182,7 +182,10 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["service"], "description", []), "html", null, true);
             echo "</td>
                                     <td class=\"actions\">
-                                        <a href=\"#\" class=\"on-default show-row\"><i class=\"fa fa-eye\"></i></a>
+                                        <a href=\"";
+            // line 48
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("detail", ["id" => twig_get_attribute($this->env, $this->source, $context["service"], "id", [])]), "html", null, true);
+            echo "\" class=\"on-default show-row\"><i class=\"fa fa-eye\"></i></a>
                                         ";
             // line 49
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
@@ -233,7 +236,10 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                                         <a href=\"#\">Help</a>
                                     </li>
                                     <li>
-                                        <a href=\"#\">Contact</a>
+                                        <a href=\"";
+        // line 84
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+        echo "\">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -319,7 +325,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     public function getDebugInfo()
     {
-        return array (  299 => 131,  294 => 130,  285 => 129,  273 => 124,  264 => 123,  253 => 121,  210 => 58,  202 => 55,  197 => 53,  190 => 50,  188 => 49,  182 => 46,  178 => 45,  175 => 44,  171 => 43,  138 => 12,  129 => 11,  117 => 9,  108 => 8,  97 => 126,  95 => 123,  93 => 11,  91 => 8,  82 => 7,  70 => 4,  61 => 3,  27 => 1,);
+        return array (  305 => 131,  300 => 130,  291 => 129,  279 => 124,  270 => 123,  259 => 121,  241 => 84,  213 => 58,  205 => 55,  200 => 53,  193 => 50,  191 => 49,  187 => 48,  182 => 46,  178 => 45,  175 => 44,  171 => 43,  138 => 12,  129 => 11,  117 => 9,  108 => 8,  97 => 126,  95 => 123,  93 => 11,  91 => 8,  82 => 7,  70 => 4,  61 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -371,7 +377,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                                     <td>{{service.nomService}}</td>
                                     <td>{{service.description}}</td>
                                     <td class=\"actions\">
-                                        <a href=\"#\" class=\"on-default show-row\"><i class=\"fa fa-eye\"></i></a>
+                                        <a href=\"{{path('detail',{id:service.id})}}\" class=\"on-default show-row\"><i class=\"fa fa-eye\"></i></a>
                                         {% if is_granted('ROLE_ADMIN') %}
                                             <a href=\"#\" data-id=\"{{ service.id }}\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
                                             <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
@@ -407,7 +413,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                                         <a href=\"#\">Help</a>
                                     </li>
                                     <li>
-                                        <a href=\"#\">Contact</a>
+                                        <a href=\"{{path('contact')}}\">Contact</a>
                                     </li>
                                 </ul>
                             </div>

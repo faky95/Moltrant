@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% block header %}
+<!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main  navbar m-b-0 b-0">
+                <div class="container">
+
+                    <!-- LOGO -->
+                    <div class="topbar-left">
+                        <a href="{{path('home')}}" class="logo"><i class="md md-terrain"></i> <span>Enablis </span></a>
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+                           
+                            <li class="dropdown user-box">
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile " data-toggle="dropdown" aria-expanded="true">
+                                    <img src="data:image/png;base64,{{ app.user.photo }}" alt="{{ app.user}}" class="img-circle user-img">
+                                    <div class="user-status away"><i class="zmdi zmdi-dot-circle"></i></div>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{path('profile')}}"><i class="md md-face-unlock"></i> Profile</a></li>
+                                    <li><a href="{{path('screen_lock')}}"><i class="md md-lock"></i> Lock screen</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a href="{{path('register')}}"><i class="md md-add-box"></i> Register</a></li>
+                                    {% endif %}
+                                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="navbar-custom">
+                <div class="container">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <li class="active">
+                                <a href="{{path('home')}}"><i class="md md-home"></i> <span> Dashboard </span> </a>
+                            </li>
+
+
+                            <li class="has-submenu">
+                                <a href="/service/list"><i class="md md-palette "></i><span> Services Enablis </span> </a>
+                                <ul class="submenu">
+                                    <li><a href="/service/list">Liste des Services</a></li>
+                                    <li><a href="">Inscription au Programme Enabler</a></li>
+                                    <li><a href="{{path('coach')}}">Liste des Coachs</a></li>
+                                    <li><a href="{{path('enabler')}}">Liste des Enablers</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="md md-invert-colors-on"></i> <span> Mon Accompagnement </span> </a>
+                                <ul class="submenu">
+                                    <li><a href="">Rapport du diagnostic</a></li>
+                                    <li><a href="mentor-details.html">Rapport du plan de developpement</a></li>
+                                    <li><a href="">Mes Participations</a></li>
+                                    <li><a href="">Services Payants</a></li>
+                                    <li><a href="">Mes Coachs, mentors, enablers</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="md md-redeem"></i> <span> Forum </span> </a>
+                            </li>
+                            {% if is_granted('ROLE_COACH') %}
+                            <li class="has-submenu">
+                                <a href="#"><i class="md md-pages"></i><span>Espace Coach </span> </a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="profile.html">Mes Membres</a></li>
+                                        </ul>
+                                    </li>
+                               
+                                </ul>
+                            </li>
+                            {% endif %}
+
+                        </ul>
+                        <!-- End navigation menu  -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
+{% endblock %}
+{% block section %}
+<div class="wrapper">
+<div class="row">
+        <div class="panel panel-color panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Details sur le Service {{service.nomService}}</h3>
+            </div>
+            <div class="panel-body">
+                <p>{{service.details}}.</br>{{service.details}}</p>
+                <div class="">
+                    <a href="">Demander Ce Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
+{% block footer %}
+{{parent()}}
+{% endblock %}
+{% endblock %}
+

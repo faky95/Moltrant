@@ -81,11 +81,11 @@ class HomeController extends AbstractController
 	public function indexAction(\Swift_Mailer $mailer)
 	{
 		$message = (new \Swift_Message('Hello Email'))
-		->setFrom(array('info.senegal@enablis.org'=>'Enablis Intranet'))
-        ->setTo('fakyndao95@gmail.com')
-        ->setCc('mahsa.zadeh@enablis.org')
-        ->setBody('ok');
+		->setFrom('info.senegal@enablis.org')
+        ->setTo('dialloquinz@gmail.com')
+        ->setCc('fakyndao95@gmail.com')
+        ->setBody('ok faky test');
 		 $mailer->send($message);
 		return $this->render('home/mail.html.twig');
-	}
+    }
 }

@@ -27,7 +27,6 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
 
         $this->blocks = [
             'body' => [$this, 'block_body'],
-            'title' => [$this, 'block_title'],
             'stylesheet' => [$this, 'block_stylesheet'],
             'section' => [$this, 'block_section'],
             'javascripts' => [$this, 'block_javascripts'],
@@ -42,16 +41,16 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "contact/contact.html.twig"));
 
-        // line 1
-        echo "<!doctype html>
-<html class=\"no-js\" lang=\"en\">
-";
         // line 3
+        echo " ";
+        $this->loadTemplate("header.html.twig", "contact/contact.html.twig", 3)->display($context);
+        // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 150
+        // line 147
         echo "    </body>
-</html>
-
+";
+        // line 149
+        echo "
 
 ";
         
@@ -62,7 +61,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
 
     }
 
-    // line 3
+    // line 4
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -71,34 +70,25 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 5
         echo "    <head>
-         <meta charset=\"UTF-8\">
-        <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("logo.ico"), "html", null, true);
-        echo "\" />
-        <title>
-        ";
-        // line 8
-        $this->displayBlock('title', $context, $blocks);
-        // line 11
-        echo "        </title>
-        ";
-        // line 12
+   
+         ";
+        // line 14
+        echo "        ";
         $this->displayBlock('stylesheet', $context, $blocks);
-        // line 28
+        // line 30
         echo "    </head>
     <body>
         ";
-        // line 30
+        // line 32
         $this->displayBlock('section', $context, $blocks);
-        // line 113
+        // line 110
         echo "        <!-- Contact End -->
        ";
-        // line 114
+        // line 111
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 149
+        // line 146
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -108,27 +98,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
 
     }
 
-    // line 8
-    public function block_title($context, array $blocks = [])
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 9
-        echo "         Enablis
-        ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 12
+    // line 14
     public function block_stylesheet($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -137,60 +107,60 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
 
-        // line 13
+        // line 15
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/bootstrap.min.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 14
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/animate.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 15
+        // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/animate-heading.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 16
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/reset.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 17
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/meanmenu.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/magnific-popup.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 19
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/owl.carousel.min.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 20
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/font-awesome.min.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/et-line-icon.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/ionicons.min.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 23
+        // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/material-design-iconic-font.min.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 24
+        // line 26
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/style.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 25
+        // line 27
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/css/responsive.css"), "html", null, true);
         echo "\">
         <script src=\"";
-        // line 26
+        // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/vendor/modernizr-2.8.3.min.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -202,7 +172,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
 
     }
 
-    // line 30
+    // line 32
     public function block_section($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -211,8 +181,9 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
 
-        // line 31
-        echo "        <!-- Contact Start -->
+        // line 33
+        echo "        <div class=\"wrapper\">
+        <!-- Contact Start -->
         
             <section class=\"contact-area pt-120 pb-83\"style=\"margin-top:-100px;height:700px;\">
             <div class=\"container\">
@@ -242,7 +213,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
                                             <h3>Telephone :</h3>
                                             <p> +221 33-822-20-04 </br>
                                                 ";
-        // line 62
+        // line 65
         echo "                                            </p>
                                     </div>
                                 </div>
@@ -261,29 +232,26 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
                         </div>
                         <div class=\"touch\">
                             <h2>Contact</h2>
-                            <form id=\"contact-form\" action=\"\" method=\"post\">
+                            <form id=\"contact-form\" action=\"";
+        // line 83
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sendEmail");
+        echo "\" method=\"post\" role=\"form\">
                                     <div class=\"row\">
-                                        <div class=\"col-md-6\">
-                                            <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Nom *\">
-                                        </div>
-                                        <div class=\"col-md-6\">
-                                            <input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Email *\">
-                                        </div>
                                         <div class=\"col-md-12\">
                                             <input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Sujet *\">
                                             <textarea name=\"message\" id=\"message\" cols=\"15\" rows=\"4\" placeholder=\"Message *\"></textarea>
                                         </div>
                                     </div>
-                                    <input class=\"btn-primary\" type=\"submit\" value=\"Envoyer\" style=\"color:white;\">
-                                </form>
+                                    <input type=\"submit\" name=\"send\" value=\"Envoyer\">
+                            </form>
                         </div>
                     </div>
                     ";
-        // line 108
+        // line 105
         echo "                </div>
             </div>
             </section>
-       
+        </div>       
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -293,7 +261,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
 
     }
 
-    // line 114
+    // line 111
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -302,56 +270,56 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 115
+        // line 112
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/vendor/jquery-1.12.0.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 116
+        // line 113
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 117
+        // line 114
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/jquery.meanmenu.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 118
+        // line 115
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/jquery.magnific-popup.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 119
+        // line 116
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/isotope.pkgd.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 120
+        // line 117
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/imagesloaded.pkgd.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 121
+        // line 118
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/jquery.counterup.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 122
+        // line 119
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/waypoints.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 123
+        // line 120
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/ajax-mail.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 124
+        // line 121
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 125
+        // line 122
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/animate-heading.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 126
+        // line 123
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/jquery.mb.YTPlayer.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 127
+        // line 124
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/plugins.js"), "html", null, true);
         echo "\"></script>
         <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDSLSFRa0DyBj9VGzT7GM6SFbSMcG0YNBM \"></script> 
@@ -374,7 +342,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
             }
         </script>
         <script src=\"";
-        // line 147
+        // line 144
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("contact/js/main.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -391,24 +359,31 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         return "contact/contact.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  378 => 147,  355 => 127,  351 => 126,  347 => 125,  343 => 124,  339 => 123,  335 => 122,  331 => 121,  327 => 120,  323 => 119,  319 => 118,  315 => 117,  311 => 116,  306 => 115,  297 => 114,  283 => 108,  246 => 62,  215 => 31,  206 => 30,  194 => 26,  190 => 25,  186 => 24,  182 => 23,  178 => 22,  174 => 21,  170 => 20,  166 => 19,  162 => 18,  158 => 17,  154 => 16,  150 => 15,  146 => 14,  141 => 13,  132 => 12,  121 => 9,  112 => 8,  102 => 149,  100 => 114,  97 => 113,  95 => 30,  91 => 28,  89 => 12,  86 => 11,  84 => 8,  79 => 6,  75 => 4,  66 => 3,  52 => 150,  50 => 3,  46 => 1,);
+        return array (  346 => 144,  323 => 124,  319 => 123,  315 => 122,  311 => 121,  307 => 120,  303 => 119,  299 => 118,  295 => 117,  291 => 116,  287 => 115,  283 => 114,  279 => 113,  274 => 112,  265 => 111,  251 => 105,  237 => 83,  217 => 65,  185 => 33,  176 => 32,  164 => 28,  160 => 27,  156 => 26,  152 => 25,  148 => 24,  144 => 23,  140 => 22,  136 => 21,  132 => 20,  128 => 19,  124 => 18,  120 => 17,  116 => 16,  111 => 15,  102 => 14,  92 => 146,  90 => 111,  87 => 110,  85 => 32,  81 => 30,  78 => 14,  74 => 5,  65 => 4,  53 => 149,  50 => 147,  48 => 4,  45 => 3,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!doctype html>
-<html class=\"no-js\" lang=\"en\">
+        return new Source("{# <!doctype html>
+<html class=\"no-js\" lang=\"en\"> #}
+ {% include 'header.html.twig' %}
 {% block body %}
     <head>
-         <meta charset=\"UTF-8\">
+   
+         {# <meta charset=\"UTF-8\">
         <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"{{ asset('logo.ico')}}\" />
         <title>
         {% block title %}
          Enablis
         {% endblock %}
-        </title>
+        </title> #}
         {% block stylesheet %}
         <link rel=\"stylesheet\" href=\"{{ asset('contact/css/bootstrap.min.css')}}\">
         <link rel=\"stylesheet\" href=\"{{ asset('contact/css/animate.css')}}\">
@@ -428,6 +403,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
     </head>
     <body>
         {% block section %}
+        <div class=\"wrapper\">
         <!-- Contact Start -->
         
             <section class=\"contact-area pt-120 pb-83\"style=\"margin-top:-100px;height:700px;\">
@@ -477,21 +453,15 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
                         </div>
                         <div class=\"touch\">
                             <h2>Contact</h2>
-                            <form id=\"contact-form\" action=\"\" method=\"post\">
+                            <form id=\"contact-form\" action=\"{{path('sendEmail')}}\" method=\"post\" role=\"form\">
                                     <div class=\"row\">
-                                        <div class=\"col-md-6\">
-                                            <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Nom *\">
-                                        </div>
-                                        <div class=\"col-md-6\">
-                                            <input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Email *\">
-                                        </div>
                                         <div class=\"col-md-12\">
                                             <input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Sujet *\">
                                             <textarea name=\"message\" id=\"message\" cols=\"15\" rows=\"4\" placeholder=\"Message *\"></textarea>
                                         </div>
                                     </div>
-                                    <input class=\"btn-primary\" type=\"submit\" value=\"Envoyer\" style=\"color:white;\">
-                                </form>
+                                    <input type=\"submit\" name=\"send\" value=\"Envoyer\">
+                            </form>
                         </div>
                     </div>
                     {# <div class=\"col-md-6\">
@@ -508,7 +478,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
                 </div>
             </div>
             </section>
-       
+        </div>       
         {% endblock %}
         <!-- Contact End -->
        {% block javascripts %}
@@ -548,7 +518,7 @@ class __TwigTemplate_0cabb9df030f63a89e003ac67fbe21b4200db1e851512198a15c1f19aa4
         {% endblock %}
         {% endblock %}
     </body>
-</html>
+{# </html> #}
 
 
 ", "contact/contact.html.twig", "/home/faky/Documents/Moltrant/templates/contact/contact.html.twig");

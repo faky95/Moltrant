@@ -31,6 +31,9 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="{{path('profile')}}"><i class="md md-face-unlock"></i> Profile</a></li>
                                     <li><a href="{{path('screen_lock')}}"><i class="md md-lock"></i> Lock screen</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a href="{{path('register')}}"><i class="md md-add-box"></i> Register</a></li>
+                                    {% endif %}
                                     <li><a href="{{ path('fos_user_security_logout') }}"><i class="md md-settings-power"></i> Logout</a></li>
                                 </ul>
                             </li>
@@ -65,7 +68,7 @@
                                 <a href="/service/list"><i class="md md-palette "></i><span> Services Enablis </span> </a>
                                 <ul class="submenu">
                                     <li><a href="/service/list">Liste des Services</a></li>
-                                    <li><a href="">Inscription au Programme Enabler</a></li>
+                                    <li><a href="{{path('inscription')}}">Inscription au Programme Enabler</a></li>
                                     <li><a href="{{path('coach')}}">Liste des Coachs</a></li>
                                     <li><a href="{{path('enabler')}}">Liste des Enablers</a></li>
                                 </ul>

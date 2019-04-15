@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -54,7 +56,7 @@ class Utilisateur extends BaseUser
     private $telephone;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $nomEntreprise;
 
@@ -69,22 +71,22 @@ class Utilisateur extends BaseUser
     private $isAdmin;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $localite;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $employes;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $chiffreAffaire;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateAdhesion;
 
@@ -118,7 +120,10 @@ class Utilisateur extends BaseUser
      */
     private $enabler;
 
-   
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Specialite", mappedBy="utilisateur")
+     */
+    private $specialites;
 
     /**
      * (non-PHPdoc)
@@ -152,6 +157,7 @@ class Utilisateur extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->specialites = new ArrayCollection();
         
     }
 
@@ -397,5 +403,38 @@ class Utilisateur extends BaseUser
 
         return $this;
     }
+
+    /**
+     * @return Collection|Specialite[]
+     */
+    public function getSpecialites(): Collection
+    {
+        return $this->specialites;
+    }
+
+    public function addSpecialite(Specialite $specialite): self
+    {
+        if (!$this->specialites->contains($specialite)) {
+            $this->specialites[] = $specialite;
+            $specialite->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSpecialite(Specialite $specialite): self
+    {
+        if ($this->specialites->contains($specialite)) {
+            $this->specialites->removeElement($specialite);
+            // set the owning side to null (unless already changed)
+            if ($specialite->getUtilisateur() === $this) {
+                $specialite->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 
 }

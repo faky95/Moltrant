@@ -43,14 +43,15 @@ class RegistrationFormType extends BaseType
             		'invalid_message' => 'fos_user.password.mismatch',
 				  ))
 			->add('etude',null,array('label'=>'Niveau d\'Etudes :' )) 
-			->add('photo',FileType::class,array('label'=>'Votre Photo :'))     
-			->add('nom_entreprise',TextType::class,array('label'=>'Entreprise :','required' => true )) 
+			->add('photo',FileType::class,array('label'=>'Votre Photo :')) 
+			->add('specialites',null,array('label'=>''))    
+			->add('nom_entreprise',TextType::class,array('label'=>'Entreprise :','required' => false)) 
 			->add('secteur', null, array('label' => 'Secteur d\'Activite :'))
-			->add('anneActivite',TextType::class,array('label'=>'Nombre d\'Annees d\'Activite :','required' => true ))      
-			->add('localite',TextType::class,array('label'=>'Localité :','required' => true ))      
-            ->add('employes',null,array('label'=>'Nombre d\'Employes :','required' => true ))      
-            ->add('chiffre_affaire',TextType::class,array('label'=>'Chiffre d\'Affaire :','required' => true ))      
-            ->add('date_adhesion',DateType::class,array('label'=>'Date d\'Adhesion :','required' => true ))           
+			->add('anneActivite',TextType::class,array('label'=>'Nombre d\'Annees d\'Activite :','required' => false ))      
+			->add('localite',TextType::class,array('label'=>'Localité :','required' => false ))      
+            ->add('employes',null,array('label'=>'Nombre d\'Employes :','required' => false ))      
+            ->add('chiffre_affaire',TextType::class,array('label'=>'Chiffre d\'Affaire :','required' => false ))      
+            ->add('date_adhesion',DateType::class,array('label'=>'Date d\'Adhesion :','required' => false ))           
 			->add('add', SubmitType::class, array('label' => 'Enregistrer', 'attr' => array('class' => 'btn btn-info marginR10 marginL10')))
             ->add('cancel', SubmitType::class, array('label' => 'Annuler', 'attr' => array('class' => 'btn btn-danger')));
    	  

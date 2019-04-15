@@ -89,7 +89,7 @@
                                 <a href="/service/list"><i class="md md-palette "></i><span> Services Enablis </span> </a>
                                 <ul class="submenu">
                                     <li><a href="/service/list">Liste des Services</a></li>
-                                    <li><a href="">Inscription au Programme Enabler</a></li>
+                                    <li><a href="{{path('inscription')}}">Inscription au Programme Enabler</a></li>
                                     <li><a href="{{path('coach')}}">Liste des Coachs</a></li>
                                     <li><a href="{{path('enabler')}}">Liste des Enablers</a></li>
                                 </ul>
@@ -144,19 +144,20 @@
                 </div>
 
                 <div class="row">
-
+                    <form action="{{path('coach')}}" method="post" role="form">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="input-group">
-                                    <input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control input-lg" placeholder="Search">
+                                    <input type="text" id="example-input1-group2" name="search" class="form-control input-lg" placeholder="Search">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn-lg btn waves-effect waves-light btn-primary w-md"><i class="fa fa-search"></i></button>
+                                        <button type="submit"name="rechercher" class="btn-lg btn waves-effect waves-light btn-primary w-md"><i class="fa fa-search"></i></button>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </form>
 
                 </div>
 
@@ -186,7 +187,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <hr>
-                                <ul class="social-links list-inline">
+                                {# <ul class="social-links list-inline">
                                     <li>
                                         <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -202,7 +203,7 @@
                                     <li>
                                         <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Message"><i class="fa fa-envelope-o"></i></a>
                                     </li>
-                                </ul>
+                                </ul> #}
                             </div> <!-- panel-body -->
                         </div> <!-- panel -->
                     </div> <!-- end col -->

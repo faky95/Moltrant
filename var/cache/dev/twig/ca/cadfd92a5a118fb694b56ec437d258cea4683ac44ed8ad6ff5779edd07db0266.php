@@ -66,7 +66,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
     ";
         // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 285
+        // line 286
         echo "</html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -178,43 +178,47 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                 </div>
 
                 <div class=\"row\">
-
+                    <form action=\"";
+        // line 147
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coach");
+        echo "\" method=\"post\" role=\"form\">
                     <div class=\"col-lg-12\">
                         <div class=\"panel panel-default\">
                             <div class=\"panel-body\">
                                 <div class=\"input-group\">
-                                    <input type=\"text\" id=\"example-input1-group2\" name=\"example-input1-group2\" class=\"form-control input-lg\" placeholder=\"Search\">
+                                    <input type=\"text\" id=\"example-input1-group2\" name=\"search\" class=\"form-control input-lg\" placeholder=\"Search\">
                                     <span class=\"input-group-btn\">
-                                        <button type=\"button\" class=\"btn-lg btn waves-effect waves-light btn-primary w-md\"><i class=\"fa fa-search\"></i></button>
+                                        <button type=\"submit\"name=\"rechercher\" class=\"btn-lg btn waves-effect waves-light btn-primary w-md\"><i class=\"fa fa-search\"></i></button>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </form>
 
                 </div>
 
                 <div class=\"row\">
                 ";
-        // line 164
+        // line 165
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["list"]);
         foreach ($context['_seq'] as $context["_key"] => $context["list"]) {
-            // line 165
+            // line 166
             echo "                    <div class=\"col-sm-6 col-lg-4\">
                         <div class=\"panel\">
                             <div class=\"panel-body\">
                                 <div class=\"media-main\">
                                     <a class=\"pull-left\" href=\"#\">
                                         <img class=\"thumb-lg img-circle\" src=\"data:image/png;base64,";
-            // line 170
+            // line 171
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["list"], "photo", []), "html", null, true);
             echo "\" alt=\"\">
                                     </a>
                                     ";
-            // line 172
+            // line 173
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 173
+                // line 174
                 echo "                                    <div class=\"pull-right btn-group-sm\">
                                         <a href=\"#\" class=\"btn btn-success waves-effect waves-light tooltips\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Edit\">
                                             <i class=\"fa fa-pencil\"></i>
@@ -225,10 +229,10 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                     </div>
                                     ";
             }
-            // line 182
+            // line 183
             echo "                                    <div class=\"info\">
                                         <h4>";
-            // line 183
+            // line 184
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["list"], "nomComplet", []), "html", null, true);
             echo "</h4>
                                         <p class=\"text-muted\">Coach</p>
@@ -236,24 +240,9 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                 </div>
                                 <div class=\"clearfix\"></div>
                                 <hr>
-                                <ul class=\"social-links list-inline\">
-                                    <li>
-                                        <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Facebook\"><i class=\"fa fa-facebook\"></i></a>
-                                    </li>
-                                    <li>
-                                        <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Twitter\"><i class=\"fa fa-twitter\"></i></a>
-                                    </li>
-                                    <li>
-                                        <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"LinkedIn\"><i class=\"fa fa-linkedin\"></i></a>
-                                    </li>
-                                    <li>
-                                        <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Skype\"><i class=\"fa fa-skype\"></i></a>
-                                    </li>
-                                    <li>
-                                        <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Message\"><i class=\"fa fa-envelope-o\"></i></a>
-                                    </li>
-                                </ul>
-                            </div> <!-- panel-body -->
+                                ";
+            // line 207
+            echo "                            </div> <!-- panel-body -->
                         </div> <!-- panel -->
                     </div> <!-- end col -->
                 ";
@@ -261,7 +250,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['list'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 210
+        // line 211
         echo "                </div> <!-- End row -->
 
                 <div class=\"row\">
@@ -305,7 +294,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                     </li>
                                     <li>
                                         <a href=\"";
-        // line 252
+        // line 253
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a>
                                     </li>
@@ -323,9 +312,9 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
         <!-- end wrapper -->
 
     ";
-        // line 267
+        // line 268
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 283
+        // line 284
         echo "    </body>
     ";
         
@@ -434,7 +423,10 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"";
+        // line 92
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+        echo "\">Inscription au Programme Enabler</a></li>
                                     <li><a href=\"";
         // line 93
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coach");
@@ -495,7 +487,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
 
     }
 
-    // line 267
+    // line 268
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -504,49 +496,49 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 268
+        // line 269
         echo "
         <!-- jQuery  -->
         <script src=\"";
-        // line 270
+        // line 271
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 271
+        // line 272
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 272
+        // line 273
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/detect.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 273
+        // line 274
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/fastclick.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 274
+        // line 275
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.blockUI.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 275
+        // line 276
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/waves.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 276
+        // line 277
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/wow.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 277
+        // line 278
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.nicescroll.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 278
+        // line 279
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.scrollTo.min.js"), "html", null, true);
         echo "\"></script>
 
         <!-- App js -->
         <script src=\"";
-        // line 281
+        // line 282
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.app.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -570,7 +562,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
 
     public function getDebugInfo()
     {
-        return array (  550 => 281,  544 => 278,  540 => 277,  536 => 276,  532 => 275,  528 => 274,  524 => 273,  520 => 272,  516 => 271,  512 => 270,  508 => 268,  499 => 267,  481 => 125,  467 => 113,  465 => 112,  444 => 94,  440 => 93,  428 => 84,  398 => 58,  392 => 56,  390 => 55,  386 => 54,  382 => 53,  372 => 48,  358 => 37,  349 => 30,  340 => 29,  329 => 283,  327 => 267,  309 => 252,  265 => 210,  232 => 183,  229 => 182,  218 => 173,  216 => 172,  211 => 170,  204 => 165,  200 => 164,  168 => 134,  166 => 29,  161 => 26,  152 => 25,  139 => 20,  134 => 18,  130 => 17,  126 => 16,  122 => 15,  118 => 14,  114 => 13,  109 => 12,  100 => 11,  89 => 8,  80 => 7,  70 => 285,  68 => 25,  64 => 23,  62 => 11,  59 => 10,  57 => 7,  52 => 5,  46 => 1,);
+        return array (  542 => 282,  536 => 279,  532 => 278,  528 => 277,  524 => 276,  520 => 275,  516 => 274,  512 => 273,  508 => 272,  504 => 271,  500 => 269,  491 => 268,  473 => 125,  459 => 113,  457 => 112,  436 => 94,  432 => 93,  428 => 92,  417 => 84,  387 => 58,  381 => 56,  379 => 55,  375 => 54,  371 => 53,  361 => 48,  347 => 37,  338 => 30,  329 => 29,  318 => 284,  316 => 268,  298 => 253,  254 => 211,  245 => 207,  236 => 184,  233 => 183,  222 => 174,  220 => 173,  215 => 171,  208 => 166,  204 => 165,  183 => 147,  168 => 134,  166 => 29,  161 => 26,  152 => 25,  139 => 20,  134 => 18,  130 => 17,  126 => 16,  122 => 15,  118 => 14,  114 => 13,  109 => 12,  100 => 11,  89 => 8,  80 => 7,  70 => 286,  68 => 25,  64 => 23,  62 => 11,  59 => 10,  57 => 7,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -666,7 +658,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"{{path('inscription')}}\">Inscription au Programme Enabler</a></li>
                                     <li><a href=\"{{path('coach')}}\">Liste des Coachs</a></li>
                                     <li><a href=\"{{path('enabler')}}\">Liste des Enablers</a></li>
                                 </ul>
@@ -721,19 +713,20 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                 </div>
 
                 <div class=\"row\">
-
+                    <form action=\"{{path('coach')}}\" method=\"post\" role=\"form\">
                     <div class=\"col-lg-12\">
                         <div class=\"panel panel-default\">
                             <div class=\"panel-body\">
                                 <div class=\"input-group\">
-                                    <input type=\"text\" id=\"example-input1-group2\" name=\"example-input1-group2\" class=\"form-control input-lg\" placeholder=\"Search\">
+                                    <input type=\"text\" id=\"example-input1-group2\" name=\"search\" class=\"form-control input-lg\" placeholder=\"Search\">
                                     <span class=\"input-group-btn\">
-                                        <button type=\"button\" class=\"btn-lg btn waves-effect waves-light btn-primary w-md\"><i class=\"fa fa-search\"></i></button>
+                                        <button type=\"submit\"name=\"rechercher\" class=\"btn-lg btn waves-effect waves-light btn-primary w-md\"><i class=\"fa fa-search\"></i></button>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </form>
 
                 </div>
 
@@ -763,7 +756,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                 </div>
                                 <div class=\"clearfix\"></div>
                                 <hr>
-                                <ul class=\"social-links list-inline\">
+                                {# <ul class=\"social-links list-inline\">
                                     <li>
                                         <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Facebook\"><i class=\"fa fa-facebook\"></i></a>
                                     </li>
@@ -779,7 +772,7 @@ class __TwigTemplate_1a97f08f827cf95a7b1071d0790468b0233df7162d125cacb69b672ef75
                                     <li>
                                         <a title=\"\" data-placement=\"top\" data-toggle=\"tooltip\" class=\"tooltips\" href=\"\" data-original-title=\"Message\"><i class=\"fa fa-envelope-o\"></i></a>
                                     </li>
-                                </ul>
+                                </ul> #}
                             </div> <!-- panel-body -->
                         </div> <!-- panel -->
                     </div> <!-- end col -->

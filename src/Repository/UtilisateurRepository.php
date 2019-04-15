@@ -36,17 +36,25 @@ class UtilisateurRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Utilisateur
+   
+    public function findCoach($value)
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
+        return $this->createQueryBuilder('u')
+            ->andwhere('u.nom LIKE :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
     }
-    */
+
+    public function findEnabler($value)
+    {
+        return $this->createQueryBuilder('u')
+            ->andwhere('u.nom LIKE :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getResult();
+    }
+    
 
     // /**
     //  * return tous les coachs

@@ -88,11 +88,11 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
         // line 8
         $this->displayBlock('header', $context, $blocks);
-        // line 110
+        // line 113
         $this->displayBlock('section', $context, $blocks);
-        // line 412
-        $this->displayBlock('footer', $context, $blocks);
         // line 415
+        $this->displayBlock('footer', $context, $blocks);
+        // line 418
         echo "
 ";
         
@@ -152,8 +152,17 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
         // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("screen_lock");
         echo "\"><i class=\"md md-lock\"></i> Lock screen</a></li>
-                                    <li><a href=\"";
+                                    ";
         // line 34
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 35
+            echo "                                    <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
+            echo "\"><i class=\"md md-add-box\"></i> Register</a></li>
+                                    ";
+        }
+        // line 37
+        echo "                                    <li><a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
         echo "\"><i class=\"md md-settings-power\"></i> Logout</a></li>
                                 </ul>
@@ -182,7 +191,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                         <ul class=\"navigation-menu\">
                             <li class=\"active\">
                                 <a href=\"";
-        // line 60
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"><i class=\"md md-home\"></i> <span> Dashboard </span> </a>
                             </li>
@@ -192,13 +201,16 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
                                     <li><a href=\"";
-        // line 69
+        // line 71
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+        echo "\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"";
+        // line 72
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coach");
         echo "\">Liste des Coachs</a></li>
                                     <li><a href=\"";
-        // line 70
+        // line 73
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("enabler");
         echo "\">Liste des Enablers</a></li>
                                 </ul>
@@ -219,9 +231,9 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <a href=\"#\"><i class=\"md md-redeem\"></i> <span> Forum </span> </a>
                             </li>
                             ";
-        // line 88
+        // line 91
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_COACH")) {
-            // line 89
+            // line 92
             echo "                            <li class=\"has-submenu\">
                                 <a href=\"#\"><i class=\"md md-pages\"></i><span>Espace Coach </span> </a>
                                 <ul class=\"submenu megamenu\">
@@ -235,7 +247,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                             </li>
                             ";
         }
-        // line 101
+        // line 104
         echo "
                         </ul>
                         <!-- End navigation menu  -->
@@ -253,7 +265,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
     }
 
-    // line 110
+    // line 113
     public function block_section($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -262,7 +274,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
 
-        // line 111
+        // line 114
         echo "<div class=\"wrapper\">
             <div class=\"container\">
 
@@ -273,14 +285,14 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <div class=\"bg-picture-overlay\"></div>
                                 <div class=\"profile-info-name\">
                                     <img src=\"data:image/png;base64,";
-        // line 120
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 120, $this->source); })()), "user", []), "photo", []), "html", null, true);
+        // line 123
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 123, $this->source); })()), "user", []), "photo", []), "html", null, true);
         echo "\" class=\"thumb-lg img-circle img-thumbnail\" alt=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 120, $this->source); })()), "user", []), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 123, $this->source); })()), "user", []), "html", null, true);
         echo "\">
                                     <h3 class=\"text-white\">";
-        // line 121
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 121, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
+        // line 124
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 124, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
         echo "</h3>
                                 </div>
                             </div>
@@ -303,7 +315,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 </a>
                             </li>
                             ";
-        // line 148
+        // line 151
         echo "                            <li class=\"tab\">
                                 <a href=\"#settings-2\" data-toggle=\"tab\" aria-expanded=\"false\">
                                     <span class=\"visible-xs\"><i class=\"fa fa-cog\"></i></span>
@@ -312,7 +324,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                             </li>
                         <div class=\"indicator\"></div></ul>
                         ";
-        // line 169
+        // line 172
         echo "                    </div>
                     <div class=\"row\">
                         <div class=\"col-lg-12\">
@@ -331,32 +343,32 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                                     <strong>Full Name</strong>
                                                     <br>
                                                     <p class=\"text-muted\">";
-        // line 186
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 186, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
+        // line 189
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 189, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
         echo "</p>
                                                 </div>
                                                 <div class=\"about-info-p\">
                                                     <strong>Mobile</strong>
                                                     <br>
                                                     <p class=\"text-muted\">";
-        // line 191
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 191, $this->source); })()), "user", []), "telephone", []), "html", null, true);
+        // line 194
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 194, $this->source); })()), "user", []), "telephone", []), "html", null, true);
         echo "</p>
                                                 </div>
                                                 <div class=\"about-info-p\">
                                                     <strong>Email</strong>
                                                     <br>
                                                     <p class=\"text-muted\">";
-        // line 196
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 196, $this->source); })()), "user", []), "email", []), "html", null, true);
+        // line 199
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 199, $this->source); })()), "user", []), "email", []), "html", null, true);
         echo "</p>
                                                 </div>
                                                 <div class=\"about-info-p m-b-0\">
                                                     <strong>Location</strong>
                                                     <br>
                                                     <p class=\"text-muted\">";
-        // line 201
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 201, $this->source); })()), "user", []), "localite", []), "html", null, true);
+        // line 204
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 204, $this->source); })()), "user", []), "localite", []), "html", null, true);
         echo "</p>
                                                 </div>
                                             </div>
@@ -503,22 +515,22 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                             <div class=\"form-group\">
                                                 <label for=\"FullName\">Full Name</label>
                                                 <input type=\"text\" value=\"";
-        // line 346
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 346, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
+        // line 349
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 349, $this->source); })()), "user", []), "nomComplet", []), "html", null, true);
         echo "\" id=\"FullName\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Email\">Email</label>
                                                 <input type=\"email\" value=\"";
-        // line 350
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 350, $this->source); })()), "user", []), "email", []), "html", null, true);
+        // line 353
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 353, $this->source); })()), "user", []), "email", []), "html", null, true);
         echo "\" id=\"Email\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <label for=\"Username\">Username</label>
                                                 <input type=\"text\" value=\"";
-        // line 354
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 354, $this->source); })()), "user", []), "html", null, true);
+        // line 357
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 357, $this->source); })()), "user", []), "html", null, true);
         echo "\" id=\"Username\" class=\"form-control\">
                                             </div>
                                             <div class=\"form-group\">
@@ -563,7 +575,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                     </li>
                                     <li>
                                         <a href=\"";
-        // line 397
+        // line 400
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a>
                                     </li>
@@ -588,7 +600,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
     }
 
-    // line 412
+    // line 415
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -597,7 +609,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 413
+        // line 416
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
 ";
@@ -621,7 +633,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
 
     public function getDebugInfo()
     {
-        return array (  601 => 413,  592 => 412,  567 => 397,  521 => 354,  514 => 350,  507 => 346,  359 => 201,  351 => 196,  343 => 191,  335 => 186,  316 => 169,  307 => 148,  283 => 121,  277 => 120,  266 => 111,  257 => 110,  239 => 101,  225 => 89,  223 => 88,  202 => 70,  198 => 69,  186 => 60,  157 => 34,  153 => 33,  149 => 32,  139 => 27,  125 => 16,  116 => 9,  107 => 8,  96 => 415,  94 => 412,  92 => 110,  90 => 8,  81 => 7,  69 => 4,  60 => 3,  27 => 1,);
+        return array (  613 => 416,  604 => 415,  579 => 400,  533 => 357,  526 => 353,  519 => 349,  371 => 204,  363 => 199,  355 => 194,  347 => 189,  328 => 172,  319 => 151,  295 => 124,  289 => 123,  278 => 114,  269 => 113,  251 => 104,  237 => 92,  235 => 91,  214 => 73,  210 => 72,  206 => 71,  195 => 63,  165 => 37,  159 => 35,  157 => 34,  153 => 33,  149 => 32,  139 => 27,  125 => 16,  116 => 9,  107 => 8,  96 => 418,  94 => 415,  92 => 113,  90 => 8,  81 => 7,  69 => 4,  60 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -659,6 +671,9 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <ul class=\"dropdown-menu\">
                                     <li><a href=\"{{path('profile')}}\"><i class=\"md md-face-unlock\"></i> Profile</a></li>
                                     <li><a href=\"{{path('screen_lock')}}\"><i class=\"md md-lock\"></i> Lock screen</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <li><a href=\"{{path('register')}}\"><i class=\"md md-add-box\"></i> Register</a></li>
+                                    {% endif %}
                                     <li><a href=\"{{ path('fos_user_security_logout') }}\"><i class=\"md md-settings-power\"></i> Logout</a></li>
                                 </ul>
                             </li>
@@ -693,7 +708,7 @@ class __TwigTemplate_d441304d744132e6ffdfe51e29c96fed72ffb18fe771513d953222145bf
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"{{path('inscription')}}\">Inscription au Programme Enabler</a></li>
                                     <li><a href=\"{{path('coach')}}\">Liste des Coachs</a></li>
                                     <li><a href=\"{{path('enabler')}}\">Liste des Enablers</a></li>
                                 </ul>

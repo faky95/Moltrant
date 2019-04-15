@@ -1,6 +1,6 @@
 var newId = '',
     responseServer = 0,
-    mooyKan = ''
+    faky = ''
 ;
 
 function requetesAjax(_type, _url, _dataType, _data, callback) {
@@ -126,7 +126,8 @@ function requetesAjax(_type, _url, _dataType, _data, callback) {
                                 _self.dialog.$confirm.on('click', function(e) {
                                     e.preventDefault();
 
-                                    requetesAjax("POST", "/user/supprimer", "JSON", {id: id}, function(data){
+                                    requetesAjax("POST", "/service/supprimer", "JSON", {id: id}, function(data){
+                                        console.log(data);
                                         if (data.error) {
                                             alert(data.message);
                                         } else {

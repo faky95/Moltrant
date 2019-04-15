@@ -3,7 +3,9 @@
 {% block title %}
 {{parent()}}
 {% endblock %}
-
+{% block stylesheets %}
+{{parent()}}
+{% endblock %}
 {% block body %}
 {% block header %}
 {{parent()}}
@@ -50,7 +52,7 @@
                                             <a href="#" data-id="{{ service.id }}" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                             <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
                                             <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" data-id="{{ service.id }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                            <a href="" data-id="{{ service.id }}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                         {% endif %}
                                     </td>
                                 </tr>
@@ -95,8 +97,16 @@
 
         </div>
         <!-- end wrapper -->
-        <!-- MODAL -->
-        {# <div id="dialog" class="modal-block mfp-hide">
+       
+{% endblock %}
+{% block footer %}
+{{parent()}}
+{% endblock %}
+
+{% endblock %}
+{% block event %}
+ <!-- MODAL -->
+        <div id="dialog" class="modal-block mfp-hide">
             <section class="panel panel-info panel-color">
                 <header class="panel-heading">
                     <h2 class="panel-title">Are you sure?</h2>
@@ -117,16 +127,11 @@
                 </div>
 
             </section>
-        </div> #}
-        <!-- end Modal -->
+        </div>
+<!-- end Modal -->
 {% endblock %}
-{% block footer %}
-{{parent()}}
-{% endblock %}
-
-{% endblock %}
-
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('assets/pages/datatables.editable.init.js')}}"></script>
 {% endblock %}
+

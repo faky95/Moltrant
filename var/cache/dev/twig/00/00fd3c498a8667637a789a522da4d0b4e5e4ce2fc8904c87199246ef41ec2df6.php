@@ -220,7 +220,10 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"";
+        // line 73
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+        echo "\">Inscription au Programme Enabler</a></li>
                                     <li><a href=\"";
         // line 74
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("coach");
@@ -492,7 +495,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
 
     public function getDebugInfo()
     {
-        return array (  472 => 194,  463 => 193,  436 => 175,  422 => 174,  414 => 171,  411 => 170,  403 => 167,  400 => 166,  397 => 165,  380 => 164,  374 => 160,  360 => 159,  354 => 157,  348 => 155,  345 => 154,  328 => 153,  322 => 149,  317 => 134,  304 => 123,  302 => 122,  294 => 116,  285 => 115,  267 => 106,  253 => 94,  251 => 93,  230 => 75,  226 => 74,  214 => 65,  184 => 39,  178 => 37,  176 => 36,  172 => 35,  168 => 34,  158 => 29,  144 => 18,  135 => 11,  126 => 10,  116 => 193,  114 => 115,  112 => 10,  103 => 9,  91 => 7,  82 => 6,  70 => 4,  61 => 3,  27 => 1,);
+        return array (  475 => 194,  466 => 193,  439 => 175,  425 => 174,  417 => 171,  414 => 170,  406 => 167,  403 => 166,  400 => 165,  383 => 164,  377 => 160,  363 => 159,  357 => 157,  351 => 155,  348 => 154,  331 => 153,  325 => 149,  320 => 134,  307 => 123,  305 => 122,  297 => 116,  288 => 115,  270 => 106,  256 => 94,  254 => 93,  233 => 75,  229 => 74,  225 => 73,  214 => 65,  184 => 39,  178 => 37,  176 => 36,  172 => 35,  168 => 34,  158 => 29,  144 => 18,  135 => 11,  126 => 10,  116 => 193,  114 => 115,  112 => 10,  103 => 9,  91 => 7,  82 => 6,  70 => 4,  61 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -569,7 +572,7 @@ class __TwigTemplate_7a22877909411bbb4ad0a1a0b796647b8cbec6b290cc9a617c4e99a670e
                                 <a href=\"/service/list\"><i class=\"md md-palette \"></i><span> Services Enablis </span> </a>
                                 <ul class=\"submenu\">
                                     <li><a href=\"/service/list\">Liste des Services</a></li>
-                                    <li><a href=\"\">Inscription au Programme Enabler</a></li>
+                                    <li><a href=\"{{path('inscription')}}\">Inscription au Programme Enabler</a></li>
                                     <li><a href=\"{{path('coach')}}\">Liste des Coachs</a></li>
                                     <li><a href=\"{{path('enabler')}}\">Liste des Enablers</a></li>
                                 </ul>

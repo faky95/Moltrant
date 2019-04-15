@@ -67,7 +67,7 @@ class HomeController extends AbstractController
             $em->persist($user);
             $em->flush();
             
-            return $this->redirectToRoute("fos_user_security_login");
+            return $this->redirectToRoute("profile");
         }
        
         return $this->render('home/register.html.twig',array(
@@ -87,5 +87,18 @@ class HomeController extends AbstractController
         ->setBody('ok faky test');
 		 $mailer->send($message);
 		return $this->render('home/mail.html.twig');
+    }
+
+    /**
+     * @Route("/header", name="header")
+     */
+    public function header()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $user = $em->getRepository(Utilisateur::class)->findAll();
+        foreach($user as $key=>$img){
+            $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
+        }
+        return $this->render('header.html.twig');
     }
 }

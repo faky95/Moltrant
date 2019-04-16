@@ -493,11 +493,31 @@
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Repository\EnablerSecteurRepository" class="App\Repository\EnablerSecteurRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\EnablerSpecialiteRepository" class="App\Repository\EnablerSpecialiteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\EtudeRepository" class="App\Repository\EtudeRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\ExpertiseRepository" class="App\Repository\ExpertiseRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\HeureRepository" class="App\Repository\HeureRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\InscriptionEnablerRepository" class="App\Repository\InscriptionEnablerRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -513,7 +533,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\StadeRepository" class="App\Repository\StadeRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\UtilisateurRepository" class="App\Repository\UtilisateurRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -3209,7 +3237,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator..IkwI.S"/>
+      <argument type="service" id=".service_locator.dro84tu"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5303,18 +5331,32 @@
     <service id=".abstract.instanceof.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EnablerSecteurRepository" class="App\Repository\EnablerSecteurRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EnablerSecteurRepository" class="App\Repository\EnablerSecteurRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EnablerSpecialiteRepository" class="App\Repository\EnablerSpecialiteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EnablerSpecialiteRepository" class="App\Repository\EnablerSpecialiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EtudeRepository" class="App\Repository\EtudeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EtudeRepository" class="App\Repository\EtudeRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ExpertiseRepository" class="App\Repository\ExpertiseRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ExpertiseRepository" class="App\Repository\ExpertiseRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HeureRepository" class="App\Repository\HeureRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\HeureRepository" class="App\Repository\HeureRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\InscriptionEnablerRepository" class="App\Repository\InscriptionEnablerRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\InscriptionEnablerRepository" class="App\Repository\InscriptionEnablerRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SecteurActiviteRepository" class="App\Repository\SecteurActiviteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SecteurActiviteRepository" class="App\Repository\SecteurActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServiceRepository" class="App\Repository\ServiceRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ServiceRepository" class="App\Repository\ServiceRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StadeRepository" class="App\Repository\StadeRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\StadeRepository" class="App\Repository\StadeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UtilisateurRepository" class="App\Repository\UtilisateurRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UtilisateurRepository" class="App\Repository\UtilisateurRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
       <tag name="console.command" command="make:auth"/>
       <argument type="service" id="maker.maker.make_authenticator"/>
@@ -5579,15 +5621,22 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator..IkwI.S" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.dro84tu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\EnablerSecteurRepository" type="service" id="App\Repository\EnablerSecteurRepository"/>
+        <argument key="App\Repository\EnablerSpecialiteRepository" type="service" id="App\Repository\EnablerSpecialiteRepository"/>
         <argument key="App\Repository\EtudeRepository" type="service" id="App\Repository\EtudeRepository"/>
+        <argument key="App\Repository\ExpertiseRepository" type="service" id="App\Repository\ExpertiseRepository"/>
+        <argument key="App\Repository\HeureRepository" type="service" id="App\Repository\HeureRepository"/>
         <argument key="App\Repository\ImageRepository" type="service" id="App\Repository\ImageRepository"/>
+        <argument key="App\Repository\InscriptionEnablerRepository" type="service" id="App\Repository\InscriptionEnablerRepository"/>
         <argument key="App\Repository\SecteurActiviteRepository" type="service" id="App\Repository\SecteurActiviteRepository"/>
         <argument key="App\Repository\ServiceRepository" type="service" id="App\Repository\ServiceRepository"/>
         <argument key="App\Repository\SpecialiteRepository" type="service" id="App\Repository\SpecialiteRepository"/>
+        <argument key="App\Repository\StadeRepository" type="service" id="App\Repository\StadeRepository"/>
         <argument key="App\Repository\UtilisateurRepository" type="service" id="App\Repository\UtilisateurRepository"/>
+        <argument key="App\Repository\VilleRepository" type="service" id="App\Repository\VilleRepository"/>
       </argument>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">

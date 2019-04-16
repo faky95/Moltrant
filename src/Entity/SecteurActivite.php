@@ -28,9 +28,15 @@ class SecteurActivite
      */
     private $utilisateurs;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\EnablerSecteur", mappedBy="secteurActivite")
+     */
+    private $enablerSecteur;
+
     public function __construct()
     {
         $this->utilisateurs = new ArrayCollection();
+        $this->enablerSecteur = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -83,5 +89,36 @@ class SecteurActivite
     public function __toString()
     {
         return $this->nomSecteur;
+    }
+
+    /**
+     * @return Collection|EnablerSecteur[]
+     */
+    public function getEnablerSecteur(): Collection
+    {
+        return $this->enablerSecteur;
+    }
+
+    public function addEnablerSecteur(EnablerSecteur $enablerSecteur): self
+    {
+        if (!$this->enablerSecteur->contains($enablerSecteur)) {
+            $this->enablerSecteur[] = $enablerSecteur;
+            $enablerSecteur->setSecteurActivite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEnablerSecteur(EnablerSecteur $enablerSecteur): self
+    {
+        if ($this->enablerSecteur->contains($enablerSecteur)) {
+            $this->enablerSecteur->removeElement($enablerSecteur);
+            // set the owning side to null (unless already changed)
+            if ($enablerSecteur->getSecteurActivite() === $this) {
+                $enablerSecteur->setSecteurActivite(null);
+            }
+        }
+
+        return $this;
     }
 }

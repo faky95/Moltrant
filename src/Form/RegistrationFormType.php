@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Utilisateur;
 
 
@@ -44,7 +45,7 @@ class RegistrationFormType extends BaseType
 				  ))
 			->add('etude',null,array('label'=>'Niveau d\'Etudes :' )) 
 			->add('photo',FileType::class,array('label'=>'Votre Photo :')) 
-			->add('specialites',null,array('label'=>''))    
+			->add('specialites',EntityType::class,array('label'=>'Expertise : ','class'=>'App\Entity\Specialite','multiple'=>true))    
 			->add('nom_entreprise',TextType::class,array('label'=>'Entreprise :','required' => false)) 
 			->add('secteur', null, array('label' => 'Secteur d\'Activite :'))
 			->add('anneActivite',TextType::class,array('label'=>'Nombre d\'Annees d\'Activite :','required' => false ))      

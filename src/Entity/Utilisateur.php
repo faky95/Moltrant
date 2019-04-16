@@ -121,9 +121,15 @@ class Utilisateur extends BaseUser
     private $enabler;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Specialite", mappedBy="utilisateur")
+     * @ORM\OneToMany(targetEntity="App\Entity\Expertise", mappedBy="utilisateur")
      */
-    private $specialites;
+    private $expertise;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\InscriptionEnabler", mappedBy="utilisateur")
+     */
+    private $inscriptionEnablers;
+
 
     /**
      * (non-PHPdoc)
@@ -158,6 +164,8 @@ class Utilisateur extends BaseUser
     {
         parent::__construct();
         $this->specialites = new ArrayCollection();
+        $this->expertise = new ArrayCollection();
+        $this->inscriptionEnablers = new ArrayCollection();
         
     }
 
@@ -405,35 +413,69 @@ class Utilisateur extends BaseUser
     }
 
     /**
-     * @return Collection|Specialite[]
+     * @return Collection|Expertise[]
      */
-    public function getSpecialites(): Collection
+    public function getExpertise(): Collection
     {
-        return $this->specialites;
+        return $this->expertise;
     }
 
-    public function addSpecialite(Specialite $specialite): self
+    public function addExpertise(Expertise $expertise): self
     {
-        if (!$this->specialites->contains($specialite)) {
-            $this->specialites[] = $specialite;
-            $specialite->setUtilisateur($this);
+        if (!$this->expertise->contains($expertise)) {
+            $this->expertise[] = $expertise;
+            $expertise->setUtilisateur($this);
         }
 
         return $this;
     }
 
-    public function removeSpecialite(Specialite $specialite): self
+    public function removeExpertise(Expertise $expertise): self
     {
-        if ($this->specialites->contains($specialite)) {
-            $this->specialites->removeElement($specialite);
+        if ($this->expertise->contains($expertise)) {
+            $this->expertise->removeElement($expertise);
             // set the owning side to null (unless already changed)
-            if ($specialite->getUtilisateur() === $this) {
-                $specialite->setUtilisateur(null);
+            if ($expertise->getUtilisateur() === $this) {
+                $expertise->setUtilisateur(null);
             }
         }
 
         return $this;
     }
+
+    /**
+     * @return Collection|InscriptionEnabler[]
+     */
+    public function getInscriptionEnablers(): Collection
+    {
+        return $this->inscriptionEnablers;
+    }
+
+    public function addInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
+    {
+        if (!$this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers[] = $inscriptionEnabler;
+            $inscriptionEnabler->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
+    {
+        if ($this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers->removeElement($inscriptionEnabler);
+            // set the owning side to null (unless already changed)
+            if ($inscriptionEnabler->getUtilisateur() === $this) {
+                $inscriptionEnabler->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+  
 
 
 

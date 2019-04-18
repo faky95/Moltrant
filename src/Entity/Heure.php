@@ -80,4 +80,9 @@ class Heure
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->nombreHeure;
+    }
 }

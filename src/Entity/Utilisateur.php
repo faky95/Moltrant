@@ -474,6 +474,11 @@ class Utilisateur extends BaseUser
         return $this;
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
 
   
 

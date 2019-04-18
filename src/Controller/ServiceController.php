@@ -5,8 +5,10 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use App\Form\InscriptionEnablerFormType;
 use App\Entity\Service;
 use App\Entity\Utilisateur;
+use App\Entity\InscriptionEnabler;
 
 
  /**
@@ -105,9 +107,31 @@ class ServiceController extends AbstractController
     /**
      * @Route("/inscription", name="inscription")
      */
-    public function inscriptionEnabler()
+    public function inscriptionEnabler(Request $request)
     {
-        return $this->render('service/inscription.html.twig');
+        
+        $em=$this->getDoctrine()->getManager();
+        $inscription = new InscriptionEnabler();
+        $enabler = $this->getUser()->getId();
+        //$specialite= new Specialite()
+        $user = $em->getRepository(Utilisateur::class)->findAll();
+        foreach($user as $key=>$img){
+            $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
+        }
+        $form = $this->createForm(InscriptionEnablerFormType::class,$inscription);
+        $form->handleRequest($request);
+        
+        if($form->isSubmitted() && $form->isValid())
+        {  
+            //exit('ok');
+            $inscription->setUtilisateur($enabler);
+            $inscription->setDateInscription(new \DateTime('now'));
+            $em->persist($inscription);
+            $em->flush();
+            return $this->redirectToRoute('home');
+        }
+
+        return $this->render('service/inscription.html.twig',['form'=>$form->createView()]);
     }
 
 

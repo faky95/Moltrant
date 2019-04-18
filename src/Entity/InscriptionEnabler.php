@@ -29,11 +29,6 @@ class InscriptionEnabler
     private $experienceProfessionnelle;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $stadeDeveloppement;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Heure", inversedBy="inscriptionEnablers")
      */
     private $heure;
@@ -42,11 +37,6 @@ class InscriptionEnabler
      * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur", inversedBy="inscriptionEnablers")
      */
     private $utilisateur;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Specialite", inversedBy="enabler")
-     */
-    private $specialite;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\EnablerSpecialite", mappedBy="inscriptionEnabler")
@@ -58,10 +48,38 @@ class InscriptionEnabler
      */
     private $enablerSecteur;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\StadeEnabler", mappedBy="inscriptionEnabler")
+     */
+    private $stadeEnabler;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $precisions;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $dateInscription;
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     */
+    private $tmp_specialite;
+
+     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     */
+    private $tmp_secteurActivite;
+
     public function __construct()
     {
         $this->enablerSpecialite = new ArrayCollection();
         $this->enablerSecteur = new ArrayCollection();
+        $this->stadeEnabler = new ArrayCollection();
+        $this->tmp_specialite  = new ArrayCollection();
+        $this->tmp_secteurActivite  = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -93,17 +111,6 @@ class InscriptionEnabler
         return $this;
     }
 
-    public function getStadeDeveloppement(): ?string
-    {
-        return $this->stadeDeveloppement;
-    }
-
-    public function setStadeDeveloppement(string $stadeDeveloppement): self
-    {
-        $this->stadeDeveloppement = $stadeDeveloppement;
-
-        return $this;
-    }
 
     public function getHeure(): ?Heure
     {
@@ -129,17 +136,6 @@ class InscriptionEnabler
         return $this;
     }
 
-    public function getSpecialite(): ?Specialite
-    {
-        return $this->specialite;
-    }
-
-    public function setSpecialite(?Specialite $specialite): self
-    {
-        $this->specialite = $specialite;
-
-        return $this;
-    }
 
     /**
      * @return Collection|EnablerSpecialite[]
@@ -202,4 +198,98 @@ class InscriptionEnabler
 
         return $this;
     }
+
+    /**
+     * @return Collection|StadeEnabler[]
+     */
+    public function getStadeEnabler(): Collection
+    {
+        return $this->stadeEnabler;
+    }
+
+    public function addStadeEnabler(StadeEnabler $stadeEnabler): self
+    {
+        if (!$this->stadeEnabler->contains($stadeEnabler)) {
+            $this->stadeEnabler[] = $stadeEnabler;
+            $stadeEnabler->setInscriptionEnabler($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStadeEnabler(StadeEnabler $stadeEnabler): self
+    {
+        if ($this->stadeEnabler->contains($stadeEnabler)) {
+            $this->stadeEnabler->removeElement($stadeEnabler);
+            // set the owning side to null (unless already changed)
+            if ($stadeEnabler->getInscriptionEnabler() === $this) {
+                $stadeEnabler->setInscriptionEnabler(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getPrecisions(): ?string
+    {
+        return $this->precisions;
+    }
+
+    public function setPrecisions(?string $precisions): self
+    {
+        $this->precisions = $precisions;
+
+        return $this;
+    }
+
+    public function getDateInscription(): ?\DateTimeInterface
+    {
+        return $this->dateInscription;
+    }
+
+    public function setDateInscription(\DateTimeInterface $dateInscription): self
+    {
+        $this->dateInscription = $dateInscription;
+
+        return $this;
+    }
+
+   /**
+     * Get tmp_specialite
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getTmpSpecialite() {
+    	$this->tmp_specialite= new ArrayCollection();
+    	return $this->tmp_specialite;
+    }
+    
+    /**
+     * @param Specialite $tmp_specialite
+     * @return \App\Entity\InscriptionEnabler
+     */
+    public function addTmpSpecialite($tmp_specialite) {
+    	$this->tmp_specialite->add($tmp_specialite);
+    	return $this;
+    }
+
+       /**
+     * Get tmp_secteurActivite
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getTmpSecteurActivite() {
+    	$this->tmp_secteurActivite= new ArrayCollection();
+    	return $this->tmp_secteurActivite;
+    }
+    
+    /**
+     * @param SecteurActivite $tmp_secteurActivite
+     * @return \App\Entity\InscriptionEnabler
+     */
+    public function addTmpSecteurActivite($tmp_secteurActivite) {
+    	$this->tmp_secteurActivite->add($tmp_secteurActivite);
+    	return $this;
+    }
+  
 }

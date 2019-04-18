@@ -490,6 +490,9 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\ServiceController"/>
       </call>
     </service>
+    <service id="App\Form\InscriptionEnablerFormType" class="App\Form\InscriptionEnablerFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -530,6 +533,14 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\StadeDeveloppementRepository" class="App\Repository\StadeDeveloppementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\StadeEnablerRepository" class="App\Repository\StadeEnablerRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -803,6 +814,7 @@
         <argument>FOS\UserBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\InscriptionEnablerFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1052,7 +1064,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.VfMdOHS"/>
+      <argument type="service" id=".service_locator.Xku6aS5"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3237,7 +3249,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.dro84tu"/>
+      <argument type="service" id=".service_locator.5nDB7F."/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5329,6 +5341,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InscriptionEnablerFormType" class="App\Form\InscriptionEnablerFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\InscriptionEnablerFormType" class="App\Form\InscriptionEnablerFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EnablerSecteurRepository" class="App\Repository\EnablerSecteurRepository" autowire="true" abstract="true"/>
@@ -5351,6 +5365,10 @@
     <service id=".abstract.instanceof.App\Repository\ServiceRepository" class="App\Repository\ServiceRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StadeDeveloppementRepository" class="App\Repository\StadeDeveloppementRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\StadeDeveloppementRepository" class="App\Repository\StadeDeveloppementRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StadeEnablerRepository" class="App\Repository\StadeEnablerRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\StadeEnablerRepository" class="App\Repository\StadeEnablerRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StadeRepository" class="App\Repository\StadeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\StadeRepository" class="App\Repository\StadeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UtilisateurRepository" class="App\Repository\UtilisateurRepository" autowire="true" abstract="true"/>
@@ -5601,9 +5619,10 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.VfMdOHS" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Xku6aS5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\InscriptionEnablerFormType" type="service" id="App\Form\InscriptionEnablerFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
@@ -5621,7 +5640,7 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.dro84tu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.5nDB7F." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\EnablerSecteurRepository" type="service" id="App\Repository\EnablerSecteurRepository"/>
@@ -5634,6 +5653,8 @@
         <argument key="App\Repository\SecteurActiviteRepository" type="service" id="App\Repository\SecteurActiviteRepository"/>
         <argument key="App\Repository\ServiceRepository" type="service" id="App\Repository\ServiceRepository"/>
         <argument key="App\Repository\SpecialiteRepository" type="service" id="App\Repository\SpecialiteRepository"/>
+        <argument key="App\Repository\StadeDeveloppementRepository" type="service" id="App\Repository\StadeDeveloppementRepository"/>
+        <argument key="App\Repository\StadeEnablerRepository" type="service" id="App\Repository\StadeEnablerRepository"/>
         <argument key="App\Repository\StadeRepository" type="service" id="App\Repository\StadeRepository"/>
         <argument key="App\Repository\UtilisateurRepository" type="service" id="App\Repository\UtilisateurRepository"/>
         <argument key="App\Repository\VilleRepository" type="service" id="App\Repository\VilleRepository"/>

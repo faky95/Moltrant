@@ -1,9 +1,4 @@
 
-/**
-* Theme: Moltran Admin Template
-* Author: Coderthemes
-* Form Validator
-*/
 
 !function($) {
     "use strict";
@@ -16,9 +11,9 @@
     //init
     FormValidator.prototype.init = function() {
         //validator plugin
-        $.validator.setDefaults({
-            submitHandler: function() { alert("submitted!"); }
-        });
+        // $.validator.setDefaults({
+        //     submitHandler: function() { alert("submitted!"); }
+        // });
 
         // validate the comment form when it is submitted
         this.$commentForm.validate();
@@ -32,24 +27,16 @@
                     required: true,
                     minlength: 2
                 },
-                password: {
-                    required: true,
-                    minlength: 5
-                },
-                confirm_password: {
-                    required: true,
-                    minlength: 5,
-                    equalTo: "#password"
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                topic: {
-                    required: "#newsletter:checked",
-                    minlength: 2
-                },
-                agree: "required"
+                // password: {
+                //     required: true,
+                //     minlength: 5
+                // },
+                // confirm_password: {
+                //     required: true,
+                //     minlength: 5,
+                //     equalTo: "#password"
+                // },
+    
             },
             messages: {
                 firstname: "Please enter your firstname",

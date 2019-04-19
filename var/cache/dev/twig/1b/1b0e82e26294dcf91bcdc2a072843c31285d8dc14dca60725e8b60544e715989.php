@@ -74,7 +74,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
         // line 172
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 194
+        // line 195
         echo "    </body>
 </html>
 ";
@@ -125,7 +125,10 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/plugins/sweetalert/dist/sweetalert.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
-
+            <link rel=\"stylesheet\" href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/plugins/magnific-popup/dist/magnific-popup.css"), "html", null, true);
+        echo "\">
             <link href=\"";
         // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
@@ -559,8 +562,12 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
         // line 190
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/plugins/datatables/dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
+        <script src=\"";
+        // line 191
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"), "html", null, true);
+        echo "\"></script>
             ";
-        // line 192
+        // line 193
         echo "
         ";
         
@@ -583,7 +590,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
 
     public function getDebugInfo()
     {
-        return array (  564 => 192,  560 => 190,  556 => 189,  552 => 188,  546 => 185,  540 => 182,  536 => 181,  532 => 180,  528 => 179,  524 => 178,  520 => 177,  516 => 176,  512 => 175,  508 => 174,  505 => 173,  496 => 172,  477 => 162,  463 => 151,  456 => 146,  447 => 145,  437 => 144,  428 => 143,  418 => 142,  409 => 141,  399 => 140,  390 => 139,  380 => 138,  371 => 137,  353 => 128,  339 => 116,  337 => 115,  316 => 97,  312 => 96,  308 => 95,  297 => 87,  267 => 61,  261 => 59,  259 => 58,  255 => 57,  251 => 56,  241 => 51,  227 => 40,  218 => 33,  209 => 32,  199 => 171,  196 => 145,  193 => 143,  190 => 141,  187 => 139,  184 => 137,  181 => 32,  172 => 31,  160 => 27,  155 => 25,  151 => 24,  147 => 23,  143 => 22,  139 => 21,  135 => 20,  131 => 19,  126 => 17,  119 => 12,  110 => 11,  99 => 8,  90 => 7,  78 => 194,  75 => 172,  73 => 31,  69 => 29,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
+        return array (  571 => 193,  567 => 191,  563 => 190,  559 => 189,  555 => 188,  549 => 185,  543 => 182,  539 => 181,  535 => 180,  531 => 179,  527 => 178,  523 => 177,  519 => 176,  515 => 175,  511 => 174,  508 => 173,  499 => 172,  480 => 162,  466 => 151,  459 => 146,  450 => 145,  440 => 144,  431 => 143,  421 => 142,  412 => 141,  402 => 140,  393 => 139,  383 => 138,  374 => 137,  356 => 128,  342 => 116,  340 => 115,  319 => 97,  315 => 96,  311 => 95,  300 => 87,  270 => 61,  264 => 59,  262 => 58,  258 => 57,  254 => 56,  244 => 51,  230 => 40,  221 => 33,  212 => 32,  202 => 171,  199 => 145,  196 => 143,  193 => 141,  190 => 139,  187 => 137,  184 => 32,  175 => 31,  163 => 27,  158 => 25,  154 => 24,  150 => 23,  146 => 22,  142 => 21,  138 => 20,  134 => 19,  130 => 18,  126 => 17,  119 => 12,  110 => 11,  99 => 8,  90 => 7,  78 => 195,  75 => 172,  73 => 31,  69 => 29,  67 => 11,  64 => 10,  62 => 7,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -605,7 +612,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
             
             <link href=\"{{ asset('assets/plugins/sweetalert/dist/sweetalert.css')}}\" rel=\"stylesheet\" type=\"text/css\">
-
+            <link rel=\"stylesheet\" href=\"{{asset('assets/plugins/magnific-popup/dist/magnific-popup.css')}}\">
             <link href=\"{{ asset('assets/css/bootstrap.min.css')}}\" rel=\"stylesheet\" type=\"text/css\">
             <link href=\"{{ asset('assets/css/core.css')}}\" rel=\"stylesheet\" type=\"text/css\">
             <link href=\"{{ asset('assets/css/icons.css')}}\" rel=\"stylesheet\" type=\"text/css\">
@@ -778,6 +785,7 @@ class __TwigTemplate_879d5da148094b1dc18de2039ef800ced9049290fed06e34e65a6e6f902
 \t    <script src=\"{{ asset('assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js')}}\"></script>
 \t    <script src=\"{{ asset('assets/plugins/jquery-datatables-editable/jquery.dataTables.js')}}\"></script>
 \t    <script src=\"{{ asset('assets/plugins/datatables/dataTables.bootstrap.js')}}\"></script>
+        <script src=\"{{ asset('assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js')}}\"></script>
             {# <script src=\"{{ asset('assets/pages/datatables.editable.init.js')}}\"></script> #}
 
         {% endblock %}

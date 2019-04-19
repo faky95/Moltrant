@@ -125,7 +125,7 @@ function requetesAjax(_type, _url, _dataType, _data, callback) {
                             change: function() {
                                 _self.dialog.$confirm.on('click', function(e) {
                                     e.preventDefault();
-
+                            
                                     requetesAjax("POST", "/service/supprimer", "JSON", {id: id}, function(data){
                                         console.log(data);
                                         if (data.error) {
@@ -245,18 +245,7 @@ function requetesAjax(_type, _url, _dataType, _data, callback) {
                     _self.rowSetActionsDefault($row);
                     return _self.datatable.cell(this).data();
                 } else {
-                    if ($this.hasClass('etat')) {
-                        if ($this.find('option:selected').val() == 'Actif') {
-                            $this.closest('td').addClass('text-vert-sonatel');
-                            $this.closest('td').removeClass('text-orange-sonatel');
-                        } else {
-                            $this.closest('td').addClass('text-orange-sonatel');
-                            $this.closest('td').removeClass('text-vert-sonatel');
-                        }
-                        val = $.trim($this.find('option:selected').val());
-                        donnees[$this.find('select').attr('name')] = val;
-                        return val;
-                    } else if(!$this.hasClass('not-editing')) {
+                    if(!$this.hasClass('not-editing')) {
                         val = $.trim($this.find('input').val());
                         donnees[$this.find('input').attr('name')] = val;
                         return val;
@@ -265,8 +254,9 @@ function requetesAjax(_type, _url, _dataType, _data, callback) {
                     }
                 }
             });
+            console.log(donnees)
 
-            requetesAjax("POST", "/user/new", "JSON", donnees, function(data) {
+            requetesAjax("POST", "/service/editer", "JSON", donnees, function(data) {
                 if (data.error) {
                     alert(data.message);
                 } else {

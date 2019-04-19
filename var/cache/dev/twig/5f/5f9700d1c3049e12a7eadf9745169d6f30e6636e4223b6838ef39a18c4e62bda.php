@@ -32,7 +32,6 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
             'header' => [$this, 'block_header'],
             'section' => [$this, 'block_section'],
             'footer' => [$this, 'block_footer'],
-            'event' => [$this, 'block_event'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
     }
@@ -114,9 +113,9 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $this->displayBlock('header', $context, $blocks);
         // line 13
         $this->displayBlock('section', $context, $blocks);
-        // line 102
+        // line 128
         $this->displayBlock('footer', $context, $blocks);
-        // line 105
+        // line 131
         echo "
 ";
         
@@ -218,7 +217,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                 echo "\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
                                             <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
                                             <a href=\"#\" class=\"on-default edit-row\"><i class=\"fa fa-pencil\"></i></a>
-                                            <a href=\"\" data-id=\"";
+                                            <a href=\"#\" data-id=\"";
                 // line 55
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["service"], "id", []), "html", null, true);
                 echo "\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
@@ -276,6 +275,32 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
         </div>
         <!-- end wrapper -->
+         <!-- MODAL -->
+    <div id=\"dialog\" class=\"modal-block mfp-hide\">
+        <section class=\"panel panel-info panel-color\">
+            <header class=\"panel-heading\">
+                <h2 class=\"panel-title\">Etes-vous sur?</h2>
+            </header>
+            <div class=\"panel-body\">
+                <div class=\"modal-wrapper\">
+                    <div class=\"modal-text\">
+                        <p>
+                            Êtes-vous sûr de vouloir supprimer cette ligne??
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"row m-t-20\">
+                    <div class=\"col-md-12 text-right\">
+                        <button id=\"dialogConfirm\" class=\"btn btn-primary waves-effect waves-light\">Confirmer</button>
+                        <button id=\"dialogCancel\" class=\"btn btn-default waves-effect\">Annuler</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+<!-- end Modal -->
        
 ";
         
@@ -286,7 +311,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 102
+    // line 128
     public function block_footer($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -295,7 +320,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 103
+        // line 129
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
 ";
@@ -307,50 +332,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     }
 
-    // line 107
-    public function block_event($context, array $blocks = [])
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "event"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "event"));
-
-        // line 108
-        echo " <!-- MODAL -->
-        <div id=\"dialog\" class=\"modal-block mfp-hide\">
-            <section class=\"panel panel-info panel-color\">
-                <header class=\"panel-heading\">
-                    <h2 class=\"panel-title\">Are you sure?</h2>
-                </header>
-                <div class=\"panel-body\">
-                    <div class=\"modal-wrapper\">
-                        <div class=\"modal-text\">
-                            <p>Are you sure that you want to delete this row?</p>
-                        </div>
-                    </div>
-
-                    <div class=\"row m-t-20\">
-                        <div class=\"col-md-12 text-right\">
-                            <button id=\"dialogConfirm\" class=\"btn btn-primary waves-effect waves-light\">Confirm</button>
-                            <button id=\"dialogCancel\" class=\"btn btn-default waves-effect\">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </div>
-<!-- end Modal -->
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 133
+    // line 136
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -359,12 +341,12 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 134
+        // line 137
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 135
+        // line 138
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/pages/datatables.editable.init.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -388,7 +370,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
     public function getDebugInfo()
     {
-        return array (  368 => 135,  363 => 134,  354 => 133,  320 => 108,  311 => 107,  299 => 103,  290 => 102,  264 => 86,  236 => 60,  228 => 57,  223 => 55,  216 => 52,  214 => 51,  210 => 50,  205 => 48,  201 => 47,  198 => 46,  194 => 45,  161 => 14,  152 => 13,  140 => 11,  131 => 10,  120 => 105,  118 => 102,  116 => 13,  114 => 10,  105 => 9,  93 => 7,  84 => 6,  72 => 4,  63 => 3,  27 => 1,);
+        return array (  350 => 138,  345 => 137,  336 => 136,  324 => 129,  315 => 128,  263 => 86,  235 => 60,  227 => 57,  222 => 55,  215 => 52,  213 => 51,  209 => 50,  204 => 48,  200 => 47,  197 => 46,  193 => 45,  160 => 14,  151 => 13,  139 => 11,  130 => 10,  119 => 131,  117 => 128,  115 => 13,  113 => 10,  104 => 9,  92 => 7,  83 => 6,  71 => 4,  62 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -447,7 +429,7 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
                                             <a href=\"#\" data-id=\"{{ service.id }}\" class=\"hidden on-editing save-row\"><i class=\"fa fa-save\"></i></a>
                                             <a href=\"#\" class=\"hidden on-editing cancel-row\"><i class=\"fa fa-times\"></i></a>
                                             <a href=\"#\" class=\"on-default edit-row\"><i class=\"fa fa-pencil\"></i></a>
-                                            <a href=\"\" data-id=\"{{ service.id }}\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
+                                            <a href=\"#\" data-id=\"{{ service.id }}\" class=\"on-default remove-row\"><i class=\"fa fa-trash-o\"></i></a>
                                         {% endif %}
                                     </td>
                                 </tr>
@@ -492,6 +474,32 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 
         </div>
         <!-- end wrapper -->
+         <!-- MODAL -->
+    <div id=\"dialog\" class=\"modal-block mfp-hide\">
+        <section class=\"panel panel-info panel-color\">
+            <header class=\"panel-heading\">
+                <h2 class=\"panel-title\">Etes-vous sur?</h2>
+            </header>
+            <div class=\"panel-body\">
+                <div class=\"modal-wrapper\">
+                    <div class=\"modal-text\">
+                        <p>
+                            Êtes-vous sûr de vouloir supprimer cette ligne??
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"row m-t-20\">
+                    <div class=\"col-md-12 text-right\">
+                        <button id=\"dialogConfirm\" class=\"btn btn-primary waves-effect waves-light\">Confirmer</button>
+                        <button id=\"dialogCancel\" class=\"btn btn-default waves-effect\">Annuler</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+<!-- end Modal -->
        
 {% endblock %}
 {% block footer %}
@@ -499,32 +507,9 @@ class __TwigTemplate_64781e0d0cab89db3176edf304e1bad6660e879949f5d79f35c054645e9
 {% endblock %}
 
 {% endblock %}
-{% block event %}
- <!-- MODAL -->
-        <div id=\"dialog\" class=\"modal-block mfp-hide\">
-            <section class=\"panel panel-info panel-color\">
-                <header class=\"panel-heading\">
-                    <h2 class=\"panel-title\">Are you sure?</h2>
-                </header>
-                <div class=\"panel-body\">
-                    <div class=\"modal-wrapper\">
-                        <div class=\"modal-text\">
-                            <p>Are you sure that you want to delete this row?</p>
-                        </div>
-                    </div>
+{# {% block event %}
 
-                    <div class=\"row m-t-20\">
-                        <div class=\"col-md-12 text-right\">
-                            <button id=\"dialogConfirm\" class=\"btn btn-primary waves-effect waves-light\">Confirm</button>
-                            <button id=\"dialogCancel\" class=\"btn btn-default waves-effect\">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-        </div>
-<!-- end Modal -->
-{% endblock %}
+{% endblock %} #}
 {% block javascripts %}
     {{ parent() }}
     <script src=\"{{ asset('assets/pages/datatables.editable.init.js')}}\"></script>

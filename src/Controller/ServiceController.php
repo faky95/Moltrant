@@ -9,6 +9,8 @@ use App\Form\InscriptionEnablerFormType;
 use App\Entity\Service;
 use App\Entity\Utilisateur;
 use App\Entity\InscriptionEnabler;
+use App\Form\ServiceFormType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 
  /**
@@ -136,15 +138,49 @@ class ServiceController extends AbstractController
 
 
     /**
-     * @Route("/supprimer/{id}",name="remove")
+     * @Route("/supprimer",name="remove")
      */
-    public function deleteService($id)
+    public function deleteService(Request $request)
     {
         $em=$this->getDoctrine()->getManager();
-        $service=$em->getRepository()->find($id);
+        $id =$request->get('id');
+        $service=$em->getRepository(Service::class)->find($id);
         $em->remove($service);
         $em->flush();
-        return $this->redirectToRoute('list');
+        return new JsonResponse([
+            'message'=>null,
+            'error'=>false,
+            'response'=>200
+        ]);
+
+    }
+
+       /**
+     * @Route("/editer",name="edite")
+     */
+    public function editService(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $id= $request->get('id');
+        $nomService=$request->get('nomService');
+        $description=$request->get('description');
+        $entity = $em->getRepository(Service::class)->find($id);
+        if (!$entity) {
+    		$this->addFlash('error', "Impossible de voir les détails, cette action n'est pas reconnue");
+    		return $this->redirect($this->generateUrl('list'));
+        }
+        $entity->setNomService($nomService);
+        $entity->setDescription($description);
+        $em->persist($entity);
+        $em->flush();
+        //$editForm = $this->createForm(ServiceFormType::class,$entity);
+       
+        return new JsonResponse([
+            'message'=>null,
+            'error'=>false,
+            'response'=>200
+        ]);
+       
 
     }
 

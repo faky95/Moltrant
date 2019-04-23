@@ -165,9 +165,14 @@ class ServiceController extends AbstractController
         $nomService=$request->get('nomService');
         $description=$request->get('description');
         $entity = $em->getRepository(Service::class)->find($id);
-        if (!$entity) {
-    		$this->addFlash('error', "Impossible de voir les détails, cette action n'est pas reconnue");
-    		return $this->redirect($this->generateUrl('list'));
+        if (!$entity && empty($id)) {
+    		$entity = new Service();
+        } else {
+            return new JsonResponse([
+                'message'=> 'id introuvable',
+                'error'=>false,
+                'response'=> 300
+            ]);
         }
         $entity->setNomService($nomService);
         $entity->setDescription($description);

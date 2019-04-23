@@ -38,20 +38,6 @@ class InscriptionEnabler
      */
     private $utilisateur;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EnablerSpecialite", mappedBy="inscriptionEnabler")
-     */
-    private $enablerSpecialite;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EnablerSecteur", mappedBy="inscriptionEnabler")
-     */
-    private $enablerSecteur;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\StadeEnabler", mappedBy="inscriptionEnabler")
-     */
-    private $stadeEnabler;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -64,22 +50,27 @@ class InscriptionEnabler
     private $dateInscription;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\ManyToMany(targetEntity="App\Entity\Specialite", inversedBy="inscriptionEnablers")
      */
-    private $tmp_specialite;
+    private $specialite;
 
-     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\SecteurActivite", inversedBy="inscriptionEnablers")
      */
-    private $tmp_secteurActivite;
+    private $secteur;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\StadeDeveloppement", inversedBy="inscriptionEnablers")
+     */
+    private $stadeDeveloppement;
+
+
 
     public function __construct()
     {
-        $this->enablerSpecialite = new ArrayCollection();
-        $this->enablerSecteur = new ArrayCollection();
-        $this->stadeEnabler = new ArrayCollection();
-        $this->tmp_specialite  = new ArrayCollection();
-        $this->tmp_secteurActivite  = new ArrayCollection();
+        $this->specialite = new ArrayCollection();
+        $this->secteur = new ArrayCollection();
+        $this->stadeDeveloppement = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -136,100 +127,6 @@ class InscriptionEnabler
         return $this;
     }
 
-
-    /**
-     * @return Collection|EnablerSpecialite[]
-     */
-    public function getEnablerSpecialite(): Collection
-    {
-        return $this->enablerSpecialite;
-    }
-
-    public function addEnablerSpecialite(EnablerSpecialite $enablerSpecialite): self
-    {
-        if (!$this->enablerSpecialite->contains($enablerSpecialite)) {
-            $this->enablerSpecialite[] = $enablerSpecialite;
-            $enablerSpecialite->setInscriptionEnabler($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEnablerSpecialite(EnablerSpecialite $enablerSpecialite): self
-    {
-        if ($this->enablerSpecialite->contains($enablerSpecialite)) {
-            $this->enablerSpecialite->removeElement($enablerSpecialite);
-            // set the owning side to null (unless already changed)
-            if ($enablerSpecialite->getInscriptionEnabler() === $this) {
-                $enablerSpecialite->setInscriptionEnabler(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|EnablerSecteur[]
-     */
-    public function getEnablerSecteur(): Collection
-    {
-        return $this->enablerSecteur;
-    }
-
-    public function addEnablerSecteur(EnablerSecteur $enablerSecteur): self
-    {
-        if (!$this->enablerSecteur->contains($enablerSecteur)) {
-            $this->enablerSecteur[] = $enablerSecteur;
-            $enablerSecteur->setInscriptionEnabler($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEnablerSecteur(EnablerSecteur $enablerSecteur): self
-    {
-        if ($this->enablerSecteur->contains($enablerSecteur)) {
-            $this->enablerSecteur->removeElement($enablerSecteur);
-            // set the owning side to null (unless already changed)
-            if ($enablerSecteur->getInscriptionEnabler() === $this) {
-                $enablerSecteur->setInscriptionEnabler(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|StadeEnabler[]
-     */
-    public function getStadeEnabler(): Collection
-    {
-        return $this->stadeEnabler;
-    }
-
-    public function addStadeEnabler(StadeEnabler $stadeEnabler): self
-    {
-        if (!$this->stadeEnabler->contains($stadeEnabler)) {
-            $this->stadeEnabler[] = $stadeEnabler;
-            $stadeEnabler->setInscriptionEnabler($this);
-        }
-
-        return $this;
-    }
-
-    public function removeStadeEnabler(StadeEnabler $stadeEnabler): self
-    {
-        if ($this->stadeEnabler->contains($stadeEnabler)) {
-            $this->stadeEnabler->removeElement($stadeEnabler);
-            // set the owning side to null (unless already changed)
-            if ($stadeEnabler->getInscriptionEnabler() === $this) {
-                $stadeEnabler->setInscriptionEnabler(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getPrecisions(): ?string
     {
         return $this->precisions;
@@ -254,42 +151,94 @@ class InscriptionEnabler
         return $this;
     }
 
-   /**
-     * Get tmp_specialite
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getTmpSpecialite() {
-    	$this->tmp_specialite= new ArrayCollection();
-    	return $this->tmp_specialite;
-    }
-    
     /**
-     * @param Specialite $tmp_specialite
-     * @return \App\Entity\InscriptionEnabler
+     * @return Collection|Specialite[]
      */
-    public function addTmpSpecialite($tmp_specialite) {
-    	$this->tmp_specialite->add($tmp_specialite);
-    	return $this;
+    public function getSpecialite(): Collection
+    {
+        return $this->specialite;
     }
 
-       /**
-     * Get tmp_secteurActivite
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection
-     */
-    public function getTmpSecteurActivite() {
-    	$this->tmp_secteurActivite= new ArrayCollection();
-    	return $this->tmp_secteurActivite;
+    public function addSpecialite(Specialite $specialite): self
+    {
+        if (!$this->specialite->contains($specialite)) {
+            $this->specialite[] = $specialite;
+        }
+
+        return $this;
     }
-    
+
+    public function removeSpecialite(Specialite $specialite): self
+    {
+        if ($this->specialite->contains($specialite)) {
+            $this->specialite->removeElement($specialite);
+        }
+
+        return $this;
+    }
+
     /**
-     * @param SecteurActivite $tmp_secteurActivite
-     * @return \App\Entity\InscriptionEnabler
+     * @return Collection|SecteurActivite[]
      */
-    public function addTmpSecteurActivite($tmp_secteurActivite) {
-    	$this->tmp_secteurActivite->add($tmp_secteurActivite);
-    	return $this;
+    public function getSecteur(): Collection
+    {
+        return $this->secteur;
     }
+
+    public function addSecteur(SecteurActivite $secteur): self
+    {
+        if (!$this->secteur->contains($secteur)) {
+            $this->secteur[] = $secteur;
+        }
+
+        return $this;
+    }
+
+    public function removeSecteur(SecteurActivite $secteur): self
+    {
+        if ($this->secteur->contains($secteur)) {
+            $this->secteur->removeElement($secteur);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|StadeDeveloppement[]
+     */
+    public function getStadeDeveloppement(): Collection
+    {
+        return $this->stadeDeveloppement;
+    }
+
+    public function addStadeDeveloppement(StadeDeveloppement $stadeDeveloppement): self
+    {
+        if (!$this->stadeDeveloppement->contains($stadeDeveloppement)) {
+            $this->stadeDeveloppement[] = $stadeDeveloppement;
+        }
+
+        return $this;
+    }
+
+    public function removeStadeDeveloppement(StadeDeveloppement $stadeDeveloppement): self
+    {
+        if ($this->stadeDeveloppement->contains($stadeDeveloppement)) {
+            $this->stadeDeveloppement->removeElement($stadeDeveloppement);
+        }
+
+        return $this;
+    }
+
+
+  
+
+
+
+ 
+
+
+    
+    
+ 
   
 }

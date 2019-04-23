@@ -18,8 +18,8 @@ class InscriptionEnablerFormType extends AbstractType
     {
             $builder->add('fonction_actuelle',TextType::class,array('label'=>'Votre Fonction Actuelle')) 
                     ->add('experience_professionnelle',TextType::class,array('label'=>'Votre Experience Professionnelle'))
-                    ->add('enabler_specialite', EntityType::class, array('label' => 'Domaine Specifique:','multiple' => true, 'class'=>'App\Entity\Specialite'))
-                    ->add('enabler_secteur', EntityType::class, array('label' => 'Experience Sectorelle:','multiple' => true, 'class'=>'App\Entity\SecteurActivite'))
+                    ->add('specialite', EntityType::class, array('label' => 'Domaine Specifique:','multiple' => true, 'class'=>'App\Entity\Specialite'))
+                    ->add('secteur', EntityType::class, array('label' => 'Experience Sectorelle:','multiple' => true, 'class'=>'App\Entity\SecteurActivite'))
                     ->add('heure',null,array('label'=>'Votre Disponibilite'))
                     //->add('cellulaire',TextType::class,array('label'=>'Votre Fonction Actuelle'))
                    // ->add('specialite',TextType::class,array('label'=>'Votre Fonction Actuelle'))

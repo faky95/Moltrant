@@ -6,6 +6,7 @@ use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -25,7 +26,7 @@ class RegistrationFormType extends BaseType
 		$builder->add('username', TextType::class, array('label' => 'Nom d\'utilisateur :','required' => true ))
 			->add('nom', TextType::class, array('label' => 'Nom :','required' => true ))
 			->add('prenom', TextType::class, array('label' => 'Prénom :','required' => true ))
-			->add('email', TextType::class, array('label' => 'Adresse Email :','required' => true ))
+			->add('email', EmailType::class, array('label' => 'Adresse Email :','required' => true ))
             ->add('telephone', null, array('label' => 'Téléphone :','required' => true ))
             ->add('sexe', ChoiceType::class, array('label' => 'Genre',
             'choices'=>[

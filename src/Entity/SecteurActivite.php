@@ -29,14 +29,17 @@ class SecteurActivite
     private $utilisateurs;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EnablerSecteur", mappedBy="secteurActivite")
+     * @ORM\ManyToMany(targetEntity="App\Entity\InscriptionEnabler", mappedBy="secteur")
      */
-    private $enablerSecteur;
+    private $inscriptionEnablers;
+
+
 
     public function __construct()
     {
         $this->utilisateurs = new ArrayCollection();
-        $this->enablerSecteur = new ArrayCollection();
+        $this->inscriptionEnablers = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -92,33 +95,33 @@ class SecteurActivite
     }
 
     /**
-     * @return Collection|EnablerSecteur[]
+     * @return Collection|InscriptionEnabler[]
      */
-    public function getEnablerSecteur(): Collection
+    public function getInscriptionEnablers(): Collection
     {
-        return $this->enablerSecteur;
+        return $this->inscriptionEnablers;
     }
 
-    public function addEnablerSecteur(EnablerSecteur $enablerSecteur): self
+    public function addInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
     {
-        if (!$this->enablerSecteur->contains($enablerSecteur)) {
-            $this->enablerSecteur[] = $enablerSecteur;
-            $enablerSecteur->setSecteurActivite($this);
+        if (!$this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers[] = $inscriptionEnabler;
+            $inscriptionEnabler->addSecteur($this);
         }
 
         return $this;
     }
 
-    public function removeEnablerSecteur(EnablerSecteur $enablerSecteur): self
+    public function removeInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
     {
-        if ($this->enablerSecteur->contains($enablerSecteur)) {
-            $this->enablerSecteur->removeElement($enablerSecteur);
-            // set the owning side to null (unless already changed)
-            if ($enablerSecteur->getSecteurActivite() === $this) {
-                $enablerSecteur->setSecteurActivite(null);
-            }
+        if ($this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers->removeElement($inscriptionEnabler);
+            $inscriptionEnabler->removeSecteur($this);
         }
 
         return $this;
     }
+
+   
+
 }

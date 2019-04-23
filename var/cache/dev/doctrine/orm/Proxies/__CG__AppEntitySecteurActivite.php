@@ -64,10 +64,10 @@ class SecteurActivite extends \App\Entity\SecteurActivite implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'id', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'nomSecteur', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'utilisateurs', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'enablerSecteur'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'id', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'nomSecteur', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'utilisateurs', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'inscriptionEnablers'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'id', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'nomSecteur', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'utilisateurs', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'enablerSecteur'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'id', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'nomSecteur', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'utilisateurs', '' . "\0" . 'App\\Entity\\SecteurActivite' . "\0" . 'inscriptionEnablers'];
     }
 
     /**
@@ -257,34 +257,34 @@ class SecteurActivite extends \App\Entity\SecteurActivite implements \Doctrine\O
     /**
      * {@inheritDoc}
      */
-    public function getEnablerSecteur(): \Doctrine\Common\Collections\Collection
+    public function getInscriptionEnablers(): \Doctrine\Common\Collections\Collection
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEnablerSecteur', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getInscriptionEnablers', []);
 
-        return parent::getEnablerSecteur();
+        return parent::getInscriptionEnablers();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function addEnablerSecteur(\App\Entity\EnablerSecteur $enablerSecteur): \App\Entity\SecteurActivite
+    public function addInscriptionEnabler(\App\Entity\InscriptionEnabler $inscriptionEnabler): \App\Entity\SecteurActivite
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addEnablerSecteur', [$enablerSecteur]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addInscriptionEnabler', [$inscriptionEnabler]);
 
-        return parent::addEnablerSecteur($enablerSecteur);
+        return parent::addInscriptionEnabler($inscriptionEnabler);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeEnablerSecteur(\App\Entity\EnablerSecteur $enablerSecteur): \App\Entity\SecteurActivite
+    public function removeInscriptionEnabler(\App\Entity\InscriptionEnabler $inscriptionEnabler): \App\Entity\SecteurActivite
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeEnablerSecteur', [$enablerSecteur]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeInscriptionEnabler', [$inscriptionEnabler]);
 
-        return parent::removeEnablerSecteur($enablerSecteur);
+        return parent::removeInscriptionEnabler($inscriptionEnabler);
     }
 
 }

@@ -13,12 +13,16 @@ namespace FOS\UserBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Storage agnostic user object.
  *
  * @author Thibault Duplessis <thibault.duplessis@gmail.com>
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
+ * @UniqueEntity("email")
+ * @UniqueEntity("email_canonical")
  */
 abstract class User implements UserInterface, GroupableInterface
 {
@@ -39,6 +43,11 @@ abstract class User implements UserInterface, GroupableInterface
 
     /**
      * @var string
+     * unique = true 
+     * @Assert\Email(
+     * message = "The email '{{ value }}' is not a valid email.",
+     * checkMX = true,
+     * )
      */
     protected $email;
 

@@ -24,13 +24,17 @@ class StadeDeveloppement
     private $stade;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\StadeEnabler", mappedBy="stadeDeveloppement")
+     * @ORM\ManyToMany(targetEntity="App\Entity\InscriptionEnabler", mappedBy="stadeDeveloppement")
      */
-    private $stadeEnabler;
+    private $inscriptionEnablers;
+
+ 
+
+   
 
     public function __construct()
     {
-        $this->stadeEnabler = new ArrayCollection();
+        $this->inscriptionEnablers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,33 +55,33 @@ class StadeDeveloppement
     }
 
     /**
-     * @return Collection|StadeEnabler[]
+     * @return Collection|InscriptionEnabler[]
      */
-    public function getStadeEnabler(): Collection
+    public function getInscriptionEnablers(): Collection
     {
-        return $this->stadeEnabler;
+        return $this->inscriptionEnablers;
     }
 
-    public function addStadeEnabler(StadeEnabler $stadeEnabler): self
+    public function addInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
     {
-        if (!$this->stadeEnabler->contains($stadeEnabler)) {
-            $this->stadeEnabler[] = $stadeEnabler;
-            $stadeEnabler->setStadeDeveloppement($this);
+        if (!$this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers[] = $inscriptionEnabler;
+            $inscriptionEnabler->addStadeDeveloppement($this);
         }
 
         return $this;
     }
 
-    public function removeStadeEnabler(StadeEnabler $stadeEnabler): self
+    public function removeInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
     {
-        if ($this->stadeEnabler->contains($stadeEnabler)) {
-            $this->stadeEnabler->removeElement($stadeEnabler);
-            // set the owning side to null (unless already changed)
-            if ($stadeEnabler->getStadeDeveloppement() === $this) {
-                $stadeEnabler->setStadeDeveloppement(null);
-            }
+        if ($this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers->removeElement($inscriptionEnabler);
+            $inscriptionEnabler->removeStadeDeveloppement($this);
         }
 
         return $this;
     }
+
+ 
+
 }

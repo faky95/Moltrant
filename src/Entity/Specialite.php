@@ -29,15 +29,16 @@ class Specialite
     private $expertise;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EnablerSpecialite", mappedBy="specialite")
+     * @ORM\ManyToMany(targetEntity="App\Entity\InscriptionEnabler", mappedBy="specialite")
      */
-    private $specialiteEnabler;
+    private $inscriptionEnablers;
+
 
 
     public function __construct()
     {
         $this->expertise = new ArrayCollection();
-        $this->specialiteEnabler = new ArrayCollection();
+        $this->inscriptionEnablers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -89,39 +90,42 @@ class Specialite
     }
     public function __toString()
     {
+        if(is_null($this->nomSpecialite)) {
+            return 'NULL';
+        }
         return $this->nomSpecialite;
     }
 
     /**
-     * @return Collection|EnablerSpecialite[]
+     * @return Collection|InscriptionEnabler[]
      */
-    public function getSpecialiteEnabler(): Collection
+    public function getInscriptionEnablers(): Collection
     {
-        return $this->specialiteEnabler;
+        return $this->inscriptionEnablers;
     }
 
-    public function addSpecialiteEnabler(EnablerSpecialite $specialiteEnabler): self
+    public function addInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
     {
-        if (!$this->specialiteEnabler->contains($specialiteEnabler)) {
-            $this->specialiteEnabler[] = $specialiteEnabler;
-            $specialiteEnabler->setSpecialite($this);
+        if (!$this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers[] = $inscriptionEnabler;
+            $inscriptionEnabler->addSpecialite($this);
         }
 
         return $this;
     }
 
-    public function removeSpecialiteEnabler(EnablerSpecialite $specialiteEnabler): self
+    public function removeInscriptionEnabler(InscriptionEnabler $inscriptionEnabler): self
     {
-        if ($this->specialiteEnabler->contains($specialiteEnabler)) {
-            $this->specialiteEnabler->removeElement($specialiteEnabler);
-            // set the owning side to null (unless already changed)
-            if ($specialiteEnabler->getSpecialite() === $this) {
-                $specialiteEnabler->setSpecialite(null);
-            }
+        if ($this->inscriptionEnablers->contains($inscriptionEnabler)) {
+            $this->inscriptionEnablers->removeElement($inscriptionEnabler);
+            $inscriptionEnabler->removeSpecialite($this);
         }
 
         return $this;
     }
+
+
+
 
    
 

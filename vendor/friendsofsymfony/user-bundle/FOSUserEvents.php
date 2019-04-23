@@ -217,6 +217,16 @@ final class FOSUserEvents
     const RESETTING_RESET_SUCCESS = 'fos_user.resetting.reset.success';
 
     /**
+     * The RESETTING_RESET_FAILED event occurs when the resetting form is failed.
+     *
+     * This event allows you to set the response instead of using the default one.
+     *
+     * @Event("FOS\UserBundle\Event\FormEvent ")
+     */
+    const RESETTING_RESET_FAILED = 'fos_user.resetting.reset.failed';
+
+
+    /**
      * The RESETTING_RESET_COMPLETED event occurs after saving the user in the resetting process.
      *
      * This event allows you to access the response which will be sent.

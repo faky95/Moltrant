@@ -83,44 +83,49 @@ class ResettingController extends Controller
         $username = $request->request->get('username');
 
         $user = $this->userManager->findUserByUsernameOrEmail($username);
-
         $event = new GetResponseNullableUserEvent($user, $request);
         $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_SEND_EMAIL_INITIALIZE, $event);
-
-        if (null !== $event->getResponse()) {
-            return $event->getResponse();
-        }
-
-        if (null !== $user && !$user->isPasswordRequestNonExpired($this->retryTtl)) {
-            $event = new GetResponseUserEvent($user, $request);
-            $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_RESET_REQUEST, $event);
-
+            if($user == null) {
+                $flashbag = $this->get('session')->getFlashBag();
+                $flashbag->add('error', "Email non existant");
+    		    return $this->redirect($this->generateUrl("fos_user_resetting_request"));
+            }
             if (null !== $event->getResponse()) {
                 return $event->getResponse();
             }
-
-            if (null === $user->getConfirmationToken()) {
-                $user->setConfirmationToken($this->tokenGenerator->generateToken());
+    
+            if (null !== $user && !$user->isPasswordRequestNonExpired($this->retryTtl)) {
+                $event = new GetResponseUserEvent($user, $request);
+                $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_RESET_REQUEST, $event);
+    
+                if (null !== $event->getResponse()) {
+                    return $event->getResponse();
+                }
+    
+                if (null === $user->getConfirmationToken()) {
+                    $user->setConfirmationToken($this->tokenGenerator->generateToken());
+                }
+    
+                $event = new GetResponseUserEvent($user, $request);
+                $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_SEND_EMAIL_CONFIRM, $event);
+    
+                if (null !== $event->getResponse()) {
+                    return $event->getResponse();
+                }
+    
+                $this->mailer->sendResettingEmailMessage($user);
+                $user->setPasswordRequestedAt(new \DateTime());
+                $this->userManager->updateUser($user);
+    
+                $event = new GetResponseUserEvent($user, $request);
+                $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_SEND_EMAIL_COMPLETED, $event);
+    
+                if (null !== $event->getResponse()) {
+                    return $event->getResponse();
+                }
             }
-
-            $event = new GetResponseUserEvent($user, $request);
-            $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_SEND_EMAIL_CONFIRM, $event);
-
-            if (null !== $event->getResponse()) {
-                return $event->getResponse();
-            }
-
-            $this->mailer->sendResettingEmailMessage($user);
-            $user->setPasswordRequestedAt(new \DateTime());
-            $this->userManager->updateUser($user);
-
-            $event = new GetResponseUserEvent($user, $request);
-            $this->eventDispatcher->dispatch(FOSUserEvents::RESETTING_SEND_EMAIL_COMPLETED, $event);
-
-            if (null !== $event->getResponse()) {
-                return $event->getResponse();
-            }
-        }
+       
+       
 
         return new RedirectResponse($this->generateUrl('fos_user_resetting_check_email', array('username' => $username)));
     }

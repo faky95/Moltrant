@@ -9,6 +9,8 @@ use App\Form\InscriptionEnablerFormType;
 use App\Entity\Service;
 use App\Entity\Utilisateur;
 use App\Entity\InscriptionEnabler;
+use App\Entity\Specialite;
+use App\Entity\SecteurActivite;
 use App\Form\ServiceFormType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -111,11 +113,11 @@ class ServiceController extends AbstractController
      */
     public function inscriptionEnabler(Request $request)
     {
-        
+   
         $em=$this->getDoctrine()->getManager();
         $inscription = new InscriptionEnabler();
-        $enabler = $this->getUser()->getId();
-        //$specialite= new Specialite()
+        $specialite=new Specialite();
+        $enabler = $this->getUser();
         $user = $em->getRepository(Utilisateur::class)->findAll();
         foreach($user as $key=>$img){
             $img->setPhoto(base64_encode(stream_get_contents($img->getPhoto())));
@@ -125,13 +127,17 @@ class ServiceController extends AbstractController
         
         if($form->isSubmitted() && $form->isValid())
         {  
-            //exit('ok');
+            
             $inscription->setUtilisateur($enabler);
             $inscription->setDateInscription(new \DateTime('now'));
             $em->persist($inscription);
+            $specialite ->addInscriptionEnabler($inscription);
             $em->flush();
-            return $this->redirectToRoute('home');
+            // $em->persist($specialite);
+            // $em->flush();
+           // return $this->redirectToRoute('home');
         }
+    
 
         return $this->render('service/inscription.html.twig',['form'=>$form->createView()]);
     }

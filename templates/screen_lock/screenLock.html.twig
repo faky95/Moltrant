@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% trans_default_domain 'FOSUserBundle' %}
+<html>
+    <head>
+         <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.ico')}}" />
+        <title>
+        {% block title %}
+         Enablis
+        {% endblock %}
+        </title>
+        {% block stylecheets %}
+            <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/core.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/components.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/pages.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/menu.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css">
+
+            <script src="{{ asset('assets/js/modernizr.min.js')}}"></script>
+        {% endblock %}
+
+        
+    </head>
+    <body>
+    {% block body %}
+
+        <div class="wrapper-page">
+            <div class="panel panel-color panel-primary panel-pages">
+
+                <div class="panel-heading bg-img"> 
+                    <div class="bg-overlay"></div>
+                    <h3 class="text-center m-t-10 text-white">&nbsp;</h3>
+                </div> 
+
+                <div class="panel-body" style="padding-top:0px">
+                 <form method="post" action="{{ path('home')}}" role="form" class="text-center"> 
+                    <div class="user-thumb"> 
+                        <img src="data:image/png;base64,{{ app.user.photo }}" class="img-responsive img-circle img-thumbnail" alt="{{app.user}}">
+                    </div> 
+                    <div class="form-group"> 
+                        <h3>{{app.user}}</h3> 
+                        <p class="text-muted">Enter your password to access the admin.</p> 
+                        <div class="input-group m-t-30"> 
+                            <input class="form-control input-lg" id="password"name="_password"type="password" required="" placeholder="Password">
+                            <span class="input-group-btn"> <button type="submit" class="btn btn-primary btn-lg waves-effect waves-light" id="submit"name="_submit">Log In</button> </span> 
+                        </div> 
+                    </div> 
+                    <div class="text-right">
+                        <a href="{{path('fos_user_security_login')}}">Not {{app.user}} ?</a>
+                    </div>
+                </form>         
+
+                </div>                                 
+                
+            </div>
+        </div>
+    {% block javascripts %}
+        
+    	<script>
+            var resizefunc = [];
+        </script>
+
+        <!-- Main  -->
+        <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{ asset('assets/js/detect.js')}}"></script>
+        <script src="{{ asset('assets/js/fastclick.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.blockUI.js')}}"></script>
+        <script src="{{ asset('assets/js/waves.js')}}"></script>
+        <script src="{{ asset('assets/js/wow.min.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.nicescroll.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.scrollTo.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/jquery.app.js')}}"></script>
+	{% endblock %}
+    {% endblock %}
+	</body>
+</html>

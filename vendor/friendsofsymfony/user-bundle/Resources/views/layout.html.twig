@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+        <title>Enablis</title>
+    {% endblock %}
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.ico')}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block stylesheet %}
+    
+        <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/core.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/components.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/pages.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/menu.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css">
+
+        <script src="{{ asset('assets/js/modernizr.min.js')}}"></script>
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+   
+
+
+{% block javascript %}
+	<script>
+            var resizefunc = [];
+        </script>
+
+        <!-- Main  -->
+        <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{ asset('assets/js/detect.js')}}"></script>
+        <script src="{{ asset('assets/js/fastclick.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.blockUI.js')}}"></script>
+        <script src="{{ asset('assets/js/waves.js')}}"></script>
+        <script src="{{ asset('assets/js/wow.min.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.nicescroll.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.scrollTo.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/jquery.app.js')}}"></script>
+{% endblock %}
+{% endblock %}
+ {% block fos_user_content %}
+        
+{% endblock fos_user_content %}
+</body>
+</html>
